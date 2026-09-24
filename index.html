@@ -10,144 +10,202 @@
     <style>
         body { font-family: 'Be Vietnam Pro', sans-serif; }
         .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .chapter-card { transition: all 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-3px); box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.08); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
 
     <!-- Top Bar -->
-    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4">
+    <div class="bg-slate-900 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
-            <span>Trường THPT B Nguyễn Huệ - Tổ Lí - Hóa - Công Nghệ</span>
-            <span class="font-medium text-blue-400">Giáo viên phụ trách: Thầy Phạm Văn Dinh</span>
+            <span class="font-medium">Trường THPT B Nguyễn Huệ, Ninh Bình • Tổ Lí - Hóa - Công Nghệ</span>
+            <span class="text-blue-400 font-semibold">⚡ Cổng thông tin học tập & mô phỏng trực tuyến</span>
         </div>
     </div>
 
-    <!-- Header / Hero Section -->
-    <header class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-xl relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 py-10 md:py-14 relative z-10 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-center md:text-left mb-6 md:mb-0">
-                <span class="bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Cổng Thí Nghiệm & Học Tập Trực Tuyến</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold mt-3 tracking-tight">VẬT LÍ THPT & LUYỆN THI <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">TSA - HSA</span></h1>
-                <p class="text-slate-300 text-sm md:text-base mt-2 max-w-2xl">Hệ thống mô phỏng thí nghiệm trực quan theo SGK Kết nối tri thức và ngân hàng ôn luyện tư duy khoa học chuyên sâu.</p>
+    <!-- Header / Hero Section with Personalization -->
+    <header class="bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1.5px,transparent_1.5px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 py-10 md:py-14 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            
+            <!-- Left: Title & Intro -->
+            <div class="text-center md:text-left flex-1">
+                <span class="inline-flex items-center gap-1.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Phòng Thí Nghiệm Ảo 4.0
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                    VẬT LÍ THPT & LUYỆN THI <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">TSA - HSA</span>
+                </h1>
+                <p class="text-slate-300 text-sm md:text-base mt-3 leading-relaxed max-w-2xl">
+                    Hệ thống thí nghiệm mô phỏng tương tác trực quan theo chương trình Kết nối tri thức và phương pháp ôn luyện tư duy khoa học đỉnh cao.
+                </p>
+                
+                <!-- Quick badges -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-2.5 mt-5">
+                    <span class="bg-white/10 text-xs font-medium px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm">📚 SGK Lớp 10, 11, 12</span>
+                    <span class="bg-white/10 text-xs font-medium px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm">🎯 Ôn Thi Tốt Nghiệp</span>
+                    <span class="bg-white/10 text-xs font-medium px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm">🚀 Tư duy TSA & HSA</span>
+                </div>
             </div>
-            <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 text-center shadow-lg min-w-[220px]">
-                <p class="text-xs text-blue-200 uppercase tracking-wider font-semibold">Phòng Thí Nghiệm Số</p>
-                <p class="text-xl font-bold mt-1 text-emerald-400">Sẵn sàng hoạt động</p>
-                <span class="inline-block mt-2 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">Phiên bản 2026</span>
+
+            <!-- Right: Teacher Profile Card (Personalization) -->
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 text-center shadow-2xl flex flex-col items-center min-w-[300px]">
+                <div class="relative w-24 h-24 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-xl mb-3 bg-slate-800">
+                    <!-- Ảnh chân dung thầy Dinh (thầy nhớ đặt file ảnh là anh-thay-dinh.jpg chung thư mục) -->
+                    <img src="anh-thay-dinh.jpg" alt="Thầy Phạm Văn Dinh" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'">
+                </div>
+                <h2 class="font-extrabold text-lg text-white">Thầy Phạm Văn Dinh</h2>
+                <p class="text-xs text-blue-300 font-semibold mt-0.5">Tổ trưởng chuyên môn Lí - Hóa - Công nghệ</p>
+                <p class="text-xs text-slate-400 mt-0.5">Trường THPT B Nguyễn Huệ</p>
+                <div class="mt-4 pt-3 border-t border-white/15 w-full flex justify-around text-xs text-cyan-300 font-bold">
+                    <span>🔬 Thực nghiệm</span>
+                    <span>📈 Sáng tạo</span>
+                    <span>💡 Tận tâm</span>
+                </div>
             </div>
+
         </div>
     </header>
 
     <!-- Navigation Tabs -->
     <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 overflow-x-auto">
-            <ul class="flex space-x-2 md:space-x-3 py-3 min-w-max">
-                <li><button onclick="switchTab('lop10')" id="btn-lop10" class="tab-btn px-4 py-2 rounded-xl text-sm font-bold transition bg-blue-600 text-white shadow-md">📚 Vật lí 10</button></li>
-                <li><button onclick="switchTab('lop11')" id="btn-lop11" class="tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">📚 Vật lí 11</button></li>
-                <li><button onclick="switchTab('lop12')" id="btn-lop12" class="tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">📚 Vật lí 12</button></li>
-                <li><button onclick="switchTab('thpt')" id="btn-thpt" class="tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🎯 Ôn Thi Tốt Nghiệp</button></li>
-                <li><button onclick="switchTab('hsa')" id="btn-hsa" class="tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🔥 Luyện thi HSA</button></li>
-                <li><button onclick="switchTab('tsa')" id="btn-tsa" class="tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🚀 Luyện thi TSA</button></li>
+            <ul class="flex space-x-2 py-3 min-w-max">
+                <li><button onclick="switchTab('lop10')" id="btn-lop10" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition bg-blue-600 text-white shadow-lg shadow-blue-600/25">📚 Vật lí 10</button></li>
+                <li><button onclick="switchTab('lop11')" id="btn-lop11" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">📚 Vật lí 11</button></li>
+                <li><button onclick="switchTab('lop12')" id="btn-lop12" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">📚 Vật lí 12</button></li>
+                <li><button onclick="switchTab('thpt')" id="btn-thpt" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🎯 Ôn Thi Tốt Nghiệp</button></li>
+                <li><button onclick="switchTab('hsa')" id="btn-hsa" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🔥 Luyện thi HSA</button></li>
+                <li><button onclick="switchTab('tsa')" id="btn-tsa" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🚀 Luyện thi TSA</button></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Container -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-10 w-full">
 
         <!-- ================= VẬT LÍ 10 ================= -->
         <div id="lop10" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-2xl font-extrabold text-slate-900 border-l-4 border-blue-600 pl-3">Chương trình Vật lí 10 (Kết nối tri thức)</h2>
-                <p class="text-slate-500 text-sm mt-1">Hệ thống mục lục bài học và thí nghiệm mô phỏng trực quan khối lớp 10[cite: 7].</p>
+            <div class="mb-8 bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
+                <div>
+                    <span class="bg-blue-500/30 text-blue-200 text-xs font-bold px-3 py-1 rounded-full border border-blue-400/30">Chương trình chuẩn</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Vật Lí Lớp 10 (Kết Nối Tri Thức)</h2>
+                    <p class="text-blue-100 text-sm mt-1">Hệ thống đầy đủ các chương, bài học và phòng thí nghiệm mô phỏng trực quan.</p>
+                </div>
+                <div class="hidden md:block text-5xl">🔭</div>
             </div>
             
             <div class="space-y-6">
                 <!-- Chương I -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-blue-700 mb-3 border-b pb-2">CHƯƠNG I. MỞ ĐẦU[cite: 7]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 1</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Làm quen với Vật lí[cite: 7]</p>
-                            <a href="bai1_10.html" class="text-xs text-blue-600 font-bold hover:underline mt-2">🧪 Mở mô phỏng &rarr;</a>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold shadow-inner">📐</div>
+                        <div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Chương 1</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Mở Đầu - Sai Số & Đo Lường</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 2</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Các quy tắc an toàn trong phòng thực hành Vật lí[cite: 7]</p>
-                            <a href="bai2_10.html" class="text-xs text-blue-600 font-bold hover:underline mt-2">📖 Xem bài học &rarr;</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition">
+                            <span class="text-xs font-bold text-slate-400">Bài 1</span>
+                            <p class="font-bold text-sm text-slate-800 my-1.5">Làm quen với Vật lí</p>
+                            <span class="text-xs font-semibold text-slate-500 bg-slate-200/60 px-2 py-1 rounded-lg w-fit">📖 Lý thuyết cơ bản</span>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 3</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Thực hành tính sai số trong phép đo[cite: 7]</p>
-                            <a href="bai3_10.html" class="text-xs text-blue-600 font-bold hover:underline mt-2">🧪 Mở mô phỏng &rarr;</a>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition">
+                            <span class="text-xs font-bold text-slate-400">Bài 2</span>
+                            <p class="font-bold text-sm text-slate-800 my-1.5">Các quy tắc an toàn trong phòng thực hành</p>
+                            <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-lg w-fit">⚠️ An toàn thí nghiệm</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition">
+                            <span class="text-xs font-bold text-slate-400">Bài 3</span>
+                            <p class="font-bold text-sm text-slate-800 my-1.5">Thực hành tính sai số trong phép đo</p>
+                            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg w-fit">📊 Kỹ năng tính toán</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chương II -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-blue-700 mb-3 border-b pb-2">CHƯƠNG II. ĐỘNG HỌC[cite: 7]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 4 - 6</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Độ dịch chuyển, quãng đường, Tốc độ và vận tốc, Đo tốc độ[cite: 7]</p>
-                            <a href="nemngang.html" class="text-xs text-blue-600 font-bold hover:underline mt-2">🧪 Chạy mô phỏng chuyển động &rarr;</a>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl font-bold shadow-inner">🚗</div>
+                        <div>
+                            <span class="text-xs font-bold text-cyan-600 uppercase tracking-wider">Chương 2</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Động Học (Chuyển Động & Vận Tốc)</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 7 - 9</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Đồ thị độ dịch chuyển - thời gian, Chuyển động biến đổi, Gia tốc[cite: 7]</p>
-                            <a href="#" class="text-xs text-blue-600 font-bold hover:underline mt-2">📖 Xem bài học &rarr;</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-cyan-300 transition">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400">Bài 4, 5, 6</span>
+                                <p class="font-bold text-sm text-slate-800 my-1.5">Độ dịch chuyển, Quãng đường, Tốc độ và Vận tốc</p>
+                            </div>
+                            <a href="Mophong_Quang duong_Độ dịch chuyển1.html" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 bg-blue-50 px-3 py-2 rounded-xl border border-blue-200 transition">🧪 Mở mô phỏng tương tác &rarr;</a>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 10 - 12</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Sự rơi tự do, Đo gia tốc rơi tự do, Chuyển động ném[cite: 7]</p>
-                            <a href="nemngang.html" class="text-xs text-blue-600 font-bold hover:underline mt-2">🧪 Mô phỏng ném ngang &rarr;</a>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-cyan-300 transition">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400">Bài 7, 8, 9</span>
+                                <p class="font-bold text-sm text-slate-800 my-1.5">Đồ thị độ dịch chuyển - thời gian, Gia tốc</p>
+                            </div>
+                            <span class="mt-3 text-xs font-semibold text-slate-500 bg-slate-200/60 px-2 py-1 rounded-lg w-fit">📖 Đang cập nhật mô phỏng</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-cyan-300 transition">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400">Bài 10, 11, 12</span>
+                                <p class="font-bold text-sm text-slate-800 my-1.5">Sự rơi tự do, Chuyển động ném ngang & ném xiên</p>
+                            </div>
+                            <span class="mt-3 text-xs font-semibold text-slate-500 bg-slate-200/60 px-2 py-1 rounded-lg w-fit">📖 Chuyên đề nâng cao</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Chương III -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-blue-700 mb-3 border-b pb-2">CHƯƠNG III. ĐỘNG LỰC HỌC[cite: 7]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 13 - 16</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Tổng hợp và phân tích lực, Các định luật Newton[cite: 7]</p>
-                            <a href="#" class="text-xs text-blue-600 font-bold hover:underline mt-2">🧪 Mô phỏng lực &rarr;</a>
+                <!-- Chương III & IV -->
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold shadow-inner">⚖️</div>
+                        <div>
+                            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Chương 3 & 4</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Động Lực Học & Các Định Luật Newton</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 17 - 19</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Trọng lực, lực căng, Lực ma sát, Lực cản và lực nâng[cite: 7]</p>
-                            <a href="#" class="text-xs text-blue-600 font-bold hover:underline mt-2">📖 Xem bài học &rarr;</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-indigo-600">Chương III (Bài 13 - 18)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Tổng hợp và phân tích lực, Ba định luật Newton, Moment lực</p>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 20 - 22</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Moment lực, Cân bằng của vật rắn, Tổng hợp lực[cite: 7]</p>
-                            <a href="#" class="text-xs text-blue-600 font-bold hover:underline mt-2">📖 Xem bài học &rarr;</a>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-indigo-600">Chương IV (Bài 19 - 27)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Năng lượng, Công, Công suất, Động năng, Thế năng, Định luật bảo toàn</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Chương IV, V, VI, VII -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-blue-700 mb-3 border-b pb-2">CHƯƠNG IV ĐẾN VII: NĂNG LƯỢNG, ĐỘNG LƯỢNG, TRÒN & BIẾN DẠNG[cite: 7]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-blue-600">Chương IV & V (Bài 23 - 30)[cite: 7]</span>
-                            <p class="font-medium text-sm text-slate-800 mt-1">Năng lượng, Công cơ học, Công suất, Động năng, Thế năng, Động lượng & Va chạm[cite: 7]</p>
-                            <a href="conlacdon.html" class="text-xs text-blue-600 font-bold hover:underline mt-2 inline-block">🧪 Mô phỏng cơ năng &rarr;</a>
+                <!-- Chương V, VI, VII -->
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔄</div>
+                        <div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Chương 5, 6 & 7</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Động Lượng, Chuyển Động Tròn & Biến Dạng</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-blue-600">Chương VI & VII (Bài 31 - 34)[cite: 7]</span>
-                            <p class="font-medium text-sm text-slate-800 mt-1">Chuyển động tròn đều, Gia tốc hướng tâm, Biến dạng vật rắn, Áp suất chất lỏng[cite: 7]</p>
-                            <a href="#" class="text-xs text-blue-600 font-bold hover:underline mt-2 inline-block">📖 Xem bài học &rarr;</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-emerald-600">Chương V (Bài 28 - 29)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Động lượng và Định luật bảo toàn động lượng</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-emerald-600">Chương VI (Bài 30 - 31)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Chuyển động tròn đều, Lực hướng tâm</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-emerald-600">Chương VII (Bài 32 - 34)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Biến dạng của vật rắn, Áp suất chất lỏng</p>
                         </div>
                     </div>
                 </div>
@@ -156,59 +214,75 @@
 
         <!-- ================= VẬT LÍ 11 ================= -->
         <div id="lop11" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-2xl font-extrabold text-slate-900 border-l-4 border-indigo-600 pl-3">Chương trình Vật lí 11 (Kết nối tri thức)</h2>
-                <p class="text-slate-500 text-sm mt-1">Hệ thống mục lục bài học và thí nghiệm mô phỏng trực quan khối lớp 11[cite: 8].</p>
+            <div class="mb-8 bg-gradient-to-r from-indigo-900 to-purple-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
+                <div>
+                    <span class="bg-indigo-500/30 text-indigo-200 text-xs font-bold px-3 py-1 rounded-full border border-indigo-400/30">Chương trình chuẩn</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Vật Lí Lớp 11 (Kết Nối Tri Thức)</h2>
+                    <p class="text-indigo-100 text-sm mt-1">Khảo sát dao động, sóng, điện trường và dòng điện không đổi.</p>
+                </div>
+                <div class="hidden md:block text-5xl">⚡</div>
             </div>
             
             <div class="space-y-6">
                 <!-- Chương I -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-indigo-700 mb-3 border-b pb-2">CHƯƠNG I. DAO ĐỘNG[cite: 8]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 1 - 4</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Dao động điều hoà, Mô tả, Vận tốc - gia tốc, Bài tập dao động[cite: 8]</p>
-                            <a href="conlacloxo.html" class="text-xs text-indigo-600 font-bold hover:underline mt-2">🧪 Mô phỏng con lắc lò xo &rarr;</a>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl font-bold shadow-inner">〰️</div>
+                        <div>
+                            <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Chương 1</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Dao Động Cơ (Con Lắc Lò Xo & Con Lắc Đơn)</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-between">
-                            <span class="text-xs font-semibold text-slate-500">Bài 5 - 7</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Động năng, thế năng, Dao động tắt dần, cưỡng bức, hiện tượng cộng hưởng[cite: 8]</p>
-                            <a href="conlacloxo.html" class="text-xs text-indigo-600 font-bold hover:underline mt-2">🧪 Mô phỏng cộng hưởng &rarr;</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-purple-600">Bài 1 - 4</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Mô tả dao động điều hoà, Vận tốc - Gia tốc, Động năng - Thế năng</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-purple-600">Bài 5 - 7</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Dao động tắt dần, Dao động cưỡng bức và hiện tượng cộng hưởng</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chương II -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-indigo-700 mb-3 border-b pb-2">CHƯƠNG II. SÓNG[cite: 8]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 8 - 10</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Mô tả sóng, Sóng ngang, sóng dọc, Đo tần số sóng âm[cite: 8]</p>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold shadow-inner">🌊</div>
+                        <div>
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Chương 2</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Sóng Cơ & Giao Thoa Sóng</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 11 - 13</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Sóng điện từ, Giao thoa sóng, Sóng dừng[cite: 8]</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-blue-600">Bài 8 - 11</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Sóng cơ và sự truyền sóng, Sóng ngang, sóng dọc, Sự phản xạ sóng</p>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 14 - 15</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Bài tập về sóng, Thực hành đo tốc độ truyền âm[cite: 8]</p>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-blue-600">Bài 12 - 15</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Giao thoa sóng, Sóng dừng và các đặc trưng cơ bản</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chương III & IV -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-indigo-700 mb-3 border-b pb-2">CHƯƠNG III & IV. ĐIỆN TRƯỜNG & DÒNG ĐIỆN[cite: 8]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-indigo-600">Chương III: Điện trường (Bài 16 - 21)[cite: 8]</span>
-                            <p class="font-medium text-sm text-slate-800 mt-1">Lực tương tác điện, Khái niệm điện trường, Điện trường đều, Thế năng điện, Tụ điện[cite: 8]</p>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔌</div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Chương 3 & 4</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Điện Trường & Dòng Điện Không Đổi</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-indigo-600">Chương IV: Dòng điện, Mạch điện (Bài 22 - 26)[cite: 8]</span>
-                            <p class="font-medium text-sm text-slate-800 mt-1">Cường độ dòng điện, Định luật Ohm, Nguồn điện, Công suất điện, Suất điện động[cite: 8]</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-amber-600">Chương III (Bài 16 - 21)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Lực tương tác điện, Điện trường đều, Điện thế, Tụ điện</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-amber-600">Chương IV (Bài 22 - 26)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Cường độ dòng điện, Định luật Ohm, Nguồn điện, Công suất</p>
                         </div>
                     </div>
                 </div>
@@ -217,54 +291,75 @@
 
         <!-- ================= VẬT LÍ 12 ================= -->
         <div id="lop12" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-2xl font-extrabold text-slate-900 border-l-4 border-emerald-600 pl-3">Chương trình Vật lí 12 (Kết nối tri thức)</h2>
-                <p class="text-slate-500 text-sm mt-1">Hệ thống mục lục bài học và thí nghiệm mô phỏng trực quan khối lớp 12[cite: 9].</p>
+            <div class="mb-8 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
+                <div>
+                    <span class="bg-emerald-500/30 text-emerald-200 text-xs font-bold px-3 py-1 rounded-full border border-emerald-400/30">Chương trình chuẩn</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Vật Lí Lớp 12 (Kết Nối Tri Thức)</h2>
+                    <p class="text-emerald-100 text-sm mt-1">Nhiệt học, Khí lí tưởng, Từ trường, Điện xoay chiều và Vật lí hạt nhân.</p>
+                </div>
+                <div class="hidden md:block text-5xl">⚛️</div>
             </div>
             
             <div class="space-y-6">
                 <!-- Chương I -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-emerald-700 mb-3 border-b pb-2">CHƯƠNG I. VẬT LÍ NHIỆT[cite: 9]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 1 - 4</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Cấu trúc chất & chuyển thể, Nội năng & Định luật I nhiệt động lực học, Nhiệt độ - thang nhiệt độ, Nhiệt dung riêng[cite: 9]</p>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔥</div>
+                        <div>
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">Chương 1</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Vật Lí Nhiệt & Nhiệt Động Lực Học</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 5 - 7</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Nhiệt nóng chảy riêng, Nhiệt hoá hơi riêng, Bài tập vật lí nhiệt[cite: 9]</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-orange-600">Bài 1 - 4</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Sự chuyển thể, Thang nhiệt độ, Nội năng, Định luật I nhiệt động lực học</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-orange-600">Bài 5 - 7</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Nhiệt dung riêng, Nhiệt hoá hơi riêng, Nhiệt nóng chảy riêng</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chương II -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-emerald-700 mb-3 border-b pb-2">CHƯƠNG II. KHÍ LÍ TƯỞNG[cite: 9]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 8 - 10</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Mô hình động học phân tử chất khí, Định luật Boyle, Định luật Charles[cite: 9]</p>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl font-bold shadow-inner">🎈</div>
+                        <div>
+                            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chương 2</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Khí Lí Tưởng</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-slate-500">Bài 11 - 13</span>
-                            <p class="font-medium text-sm text-slate-800 my-1">Phương trình trạng thái khí lí tưởng, Áp suất khí theo mô hình động học, Bài tập khí lí tưởng[cite: 9]</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-teal-600">Bài 8 - 10</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Mô hình động học phân tử chất khí, Định luật Boyle, Định luật Charles</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-teal-600">Bài 11 - 13</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Phương trình trạng thái khí lí tưởng, Áp suất chất khí</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chương III & IV -->
-                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-                    <h3 class="font-bold text-lg text-emerald-700 mb-3 border-b pb-2">CHƯƠNG III & IV. TỪ TRƯỜNG & VẬT LÍ HẠT NHÂN[cite: 9]</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-emerald-600">Chương III: Từ trường (Bài 14 - 20)[cite: 9]</span>
-                            <p class="font-medium text-sm text-slate-800 mt-1">Từ trường, Lực từ, Từ thông & Cảm ứng điện từ, Máy phát điện xoay chiều, Sóng điện từ[cite: 9]</p>
-                            <a href="machrlc.html" class="text-xs text-emerald-600 font-bold hover:underline mt-2 inline-block">🧪 Mô phỏng xoay chiều &rarr;</a>
+                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl font-bold shadow-inner">🧲</div>
+                        <div>
+                            <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">Chương 3 & 4</span>
+                            <h3 class="text-xl font-extrabold text-slate-900">Từ Trường & Vật Lí Hạt Nhân</h3>
                         </div>
-                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                            <span class="text-xs font-semibold text-emerald-600">Chương IV: Vật lí hạt nhân (Bài 21 - 25)[cite: 9]</span>
-                            <p class="font-medium text-sm text-slate-800 mt-1">Cấu trúc hạt nhân, Phản ứng hạt nhân, Hiện tượng phóng xạ, Công nghiệp hạt nhân[cite: 9]</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-rose-600">Chương III (Bài 14 - 20)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Cảm ứng từ, Từ thông, Dòng điện cảm ứng, Máy phát điện xoay chiều</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <span class="text-xs font-bold text-rose-600">Chương IV (Bài 21 - 25)</span>
+                            <p class="font-bold text-sm text-slate-800 mt-1">Cấu trúc hạt nhân, Phản ứng hạt nhân, Năng lượng liên kết, Phóng xạ</p>
                         </div>
                     </div>
                 </div>
@@ -273,47 +368,60 @@
 
         <!-- ================= ÔN THI TỐT NGHIỆP ================= -->
         <div id="thpt" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-2xl font-extrabold text-slate-900 border-l-4 border-amber-600 pl-3">Ôn Thi Tốt Nghiệp THPT</h2>
-                <p class="text-slate-500 text-sm mt-1">Hệ thống đề thi thử, cấu trúc ma trận chuẩn và chuyên đề vận dụng cao.</p>
+            <div class="mb-8 bg-gradient-to-r from-amber-800 to-orange-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
+                <div>
+                    <span class="bg-amber-500/30 text-amber-200 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/30">Hệ thống luyện thi</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Ôn Thi Tốt Nghiệp THPT Môn Vật Lí</h2>
+                    <p class="text-amber-100 text-sm mt-1">Tổng hợp đề thi thử bám sát ma trận cấu trúc của Bộ GD&ĐT.</p>
+                </div>
+                <div class="hidden md:block text-5xl">🏆</div>
             </div>
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">📌 Kho đề thi tốt nghiệp THPT</h3>
-                <p class="text-slate-600 text-sm">Các đề thi thử bám sát cấu trúc của Bộ GD&ĐT giúp học sinh rèn luyện kỹ năng giải nhanh.</p>
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+                <h3 class="font-extrabold text-xl text-slate-900 mb-3">📌 Kho Đề Thi Thử & Chuyên Đề Vận Dụng Cao</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Hệ thống các bộ đề thi thử độc quyền từ các trường chuyên trên toàn quốc, kèm video giải chi tiết các câu hỏi mức độ Vận dụng - Vận dụng cao (8, 9, 10 điểm).</p>
             </div>
         </div>
 
         <!-- ================= LUYỆN THI HSA ================= -->
         <div id="hsa" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-2xl font-extrabold text-slate-900 border-l-4 border-purple-600 pl-3">Luyện Thi Đánh Giá Năng Lực (HSA - ĐHQGHN)</h2>
-                <p class="text-slate-500 text-sm mt-1">Phần Tư duy Khoa học - Môn Vật lí: Kỹ năng xử lý dữ liệu và thí nghiệm.</p>
+            <div class="mb-8 bg-gradient-to-r from-purple-800 to-indigo-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
+                <div>
+                    <span class="bg-purple-500/30 text-purple-200 text-xs font-bold px-3 py-1 rounded-full border border-purple-400/30">Đánh Giá Năng Lực ĐHQGHN</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Luyện Thi HSA - Phần Tư Duy Khoa Học</h2>
+                    <p class="text-purple-100 text-sm mt-1">Rèn luyện kỹ năng phân tích biểu đồ, xử lý số liệu thí nghiệm thực tế.</p>
+                </div>
+                <div class="hidden md:block text-5xl">🧠</div>
             </div>
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">🧠 Ngân hàng câu hỏi HSA</h3>
-                <p class="text-slate-600 text-sm">Tuyển tập câu hỏi trắc nghiệm đánh giá năng lực tư duy logic và thực tế.</p>
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+                <h3 class="font-extrabold text-xl text-slate-900 mb-3">🎯 Ngân Hàng Câu Hỏi & Đề Thi Thử HSA</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Chuyên đề bám sát định dạng đề thi Đánh giá năng lực của Đại học Quốc gia Hà Nội, chú trọng vào tư duy logic, đọc hiểu bảng số liệu vật lý.</p>
             </div>
         </div>
 
         <!-- ================= LUYỆN THI TSA ================= -->
         <div id="tsa" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-2xl font-extrabold text-slate-900 border-l-4 border-rose-600 pl-3">Luyện Thi Đánh Giá Tư Duy (TSA - ĐH Bách Khoa Hà Nội)</h2>
-                <p class="text-slate-500 text-sm mt-1">Tư duy Khoa học tự nhiên chuyên sâu phục vụ xét tuyển Đại học.</p>
+            <div class="mb-8 bg-gradient-to-r from-rose-800 to-red-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
+                <div>
+                    <span class="bg-rose-500/30 text-rose-200 text-xs font-bold px-3 py-1 rounded-full border border-rose-400/30">Đánh Giá Tư Duy ĐHBKHN</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Luyện Thi TSA - Tư Duy Khoa Học Tự Nhiên</h2>
+                    <p class="text-rose-100 text-sm mt-1">Chinh phục phần thi Khoa học ứng dụng phục vụ xét tuyển Bách Khoa.</p>
+                </div>
+                <div class="hidden md:block text-5xl">🚀</div>
             </div>
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-                <h3 class="font-bold text-lg text-slate-800 mb-2">⚙️ Chuyên đề Tư duy Khoa học TSA</h3>
-                <p class="text-slate-600 text-sm">Các bài toán đọc hiểu đồ thị, phân tích bảng số liệu thực nghiệm nâng cao.</p>
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+                <h3 class="font-extrabold text-xl text-slate-900 mb-3">⚙️ Chuyên Đề Tư Duy Khoa Học Chuyên Sâu</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Hệ thống bài tập tư duy định lượng, phân tích hiện tượng vật lý nâng cao đáp ứng kỳ thi Đánh giá tư duy của ĐH Bách Khoa Hà Nội.</p>
             </div>
         </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-sm border-t border-slate-800 mt-auto">
+    <footer class="bg-slate-900 text-slate-400 text-center py-10 text-sm border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
-            <p class="font-medium text-slate-300">Cổng Thông Tin Thí Nghiệm Ảo & Luyện Thi Vật Lí - Thầy Phạm Văn Dinh</p>
-            <p class="mt-2 text-xs text-slate-500">© 2026 Trường THPT B Nguyễn Huệ, Ninh Bình. All rights reserved.</p>
+            <p class="font-extrabold text-white text-base">CỔNG THÔNG TIN THÍ NGHIỆM ẢO & LUYỆN THI VẬT LÍ</p>
+            <p class="text-xs text-blue-400 mt-1 font-semibold">Thầy Phạm Văn Dinh • Trường THPT B Nguyễn Huệ, Ninh Bình</p>
+            <p class="mt-4 text-xs text-slate-500">© 2026 vatlythpt.com. All rights reserved.</p>
         </div>
     </footer>
 
@@ -322,11 +430,12 @@
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = "tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:bg-slate-100";
+                btn.className = "tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100";
             });
             document.getElementById(tabId).classList.add('active');
             const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.className = "tab-btn px-4 py-2 rounded-xl text-sm font-bold transition bg-blue-600 text-white shadow-md";
+            activeBtn.className = "tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition bg-blue-600 text-white shadow-lg shadow-blue-600/25";
+            window.scrollTo({ top: 300, behavior: 'smooth' });
         }
     </script>
 </body>
