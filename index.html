@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071a35">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Vật Lý THPT • Học – Luyện – Kiểm tra – AI cá nhân hóa</title>
 <meta name="description" content="Hệ thống học Vật lí THPT, luyện tập, kiểm tra, AI cá nhân hóa và quản trị lớp học.">
 <style>
@@ -65,6 +68,62 @@ html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
 @media(max-width:390px){
   .container{width:calc(100% - 20px)}.nav{gap:5px}.brandtext b{font-size:14px}.mark{width:40px;height:40px;flex-basis:40px}.actions #loginBtn{max-width:108px;padding:6px 7px!important}.actions #loginBtn .account-name{max-width:56px}.menu-btn{width:42px;height:42px;flex-basis:42px}.hero h1{font-size:36px!important}.badge{font-size:9.5px}.quick-program{font-size:10.5px}.homepage-profile .teacher{grid-template-columns:50px minmax(0,1fr)!important}.homepage-profile .profile-photo{width:50px!important;height:50px!important;min-width:50px}.lesson-paths{grid-template-columns:1fr 1fr!important}}
 
+
+/* V5.3: phone typography + compact teacher profile + cross-device avatar */
+@media (max-width:760px){
+  body{font-size:14px;overflow-x:hidden}
+  .container{width:calc(100% - 24px)!important}
+  .site-header{backdrop-filter:blur(12px)}
+  .nav{height:64px!important;gap:7px!important}
+  .mark{width:42px!important;height:42px!important;border-radius:13px!important;font-size:18px!important;flex:0 0 42px!important}
+  .brand{gap:8px!important;min-width:0!important}
+  .brandtext b{font-size:15px!important;letter-spacing:.1px!important;white-space:nowrap}
+  .actions{gap:6px!important;margin-left:auto;min-width:0}
+  .actions #loginBtn{height:42px!important;max-width:142px!important;padding:5px 8px!important;border-radius:12px!important;min-width:0}
+  .actions #loginBtn.account-chip{gap:7px!important}
+  .actions #loginBtn .account-avatar{width:32px!important;height:32px!important;flex:0 0 32px!important;border-radius:9px!important}
+  .actions #loginBtn .account-name{font-size:11px!important;max-width:72px!important}
+  .menu-btn{width:42px!important;height:42px!important;flex:0 0 42px!important;border-radius:12px!important}
+  .hero{padding:24px 0 18px!important}
+  .hero-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .badge{font-size:9px!important;line-height:1.25!important;padding:6px 9px!important;letter-spacing:.35px!important}
+  .hero h1{font-size:clamp(30px,8.6vw,36px)!important;line-height:1.04!important;letter-spacing:-1.2px!important;margin:12px 0 10px!important;max-width:100%}
+  .hero p{font-size:13.5px!important;line-height:1.55!important;margin:0 0 9px!important;color:#c3d5eb!important}
+  .home-mini-note{font-size:10px!important;line-height:1.4!important;margin-top:9px!important;color:#bed3e9!important}
+  .homepage-profile{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;display:grid!important;gap:8px!important}
+  .homepage-profile .float{float:none!important;position:static!important;justify-self:end!important;margin:0!important;font-size:9px!important;padding:6px 9px!important;border-radius:9px!important;line-height:1.15!important}
+  .homepage-profile .orbit,.homepage-profile .core{display:none!important}
+  .homepage-profile .teacher{position:static!important;display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;gap:10px!important;align-items:center!important;width:100%!important;margin:0!important;padding:10px 12px!important;border-radius:14px!important;background:rgba(4,20,43,.78)!important;border:1px solid rgba(255,255,255,.12)!important}
+  .homepage-profile .profile-photo{width:48px!important;height:48px!important;min-width:48px!important;border-radius:14px!important;margin:0!important;object-fit:cover!important;font-size:15px!important}
+  .teacher-profile-meta{min-width:0!important}
+  .teacher-profile-meta b{font-size:13.5px!important;line-height:1.25!important;margin:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  .teacher-profile-meta small{font-size:10.5px!important;line-height:1.3!important;margin-top:2px!important}
+  .teacher-profile-meta p{font-size:9.5px!important;line-height:1.35!important;margin:3px 0 0!important;display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;overflow:hidden!important}
+  .quick-programs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin-top:0!important;padding-top:10px!important}
+  .quick-program{padding:10px 7px!important;min-height:48px!important;border-radius:13px!important;font-size:10.5px!important;line-height:1.2!important}
+  .curriculum-section{padding-top:26px!important}
+  .section-head h2{font-size:26px!important;letter-spacing:-.7px!important}
+  .section-head p{font-size:12.5px!important}
+  .grade-tab{font-size:11px!important;padding:9px 8px!important}
+  .search input{font-size:12px!important}
+  .chapter-head{padding:12px!important}.chapter-title b{font-size:12px!important}.chapter-title small{font-size:10px!important}
+  .lesson-row{padding:11px!important}.lesson-row b{font-size:12px!important}.lesson-link{font-size:9px!important;padding:6px 7px!important}
+  footer{font-size:12px!important}.footer-contact{line-height:1.55!important}
+}
+@media (max-width:390px){
+  .container{width:calc(100% - 18px)!important}
+  .brandtext b{font-size:13.5px!important}
+  .actions #loginBtn{max-width:118px!important}
+  .actions #loginBtn .account-name{max-width:56px!important}
+  .hero h1{font-size:30px!important;line-height:1.05!important}
+  .hero p{font-size:12.8px!important}
+  .home-mini-note{font-size:9.5px!important}
+  .homepage-profile .teacher{grid-template-columns:44px minmax(0,1fr)!important;padding:9px 10px!important}
+  .homepage-profile .profile-photo{width:44px!important;height:44px!important;min-width:44px!important;border-radius:12px!important}
+  .teacher-profile-meta b{font-size:12.5px!important}.teacher-profile-meta small{font-size:9.8px!important}.teacher-profile-meta p{font-size:9px!important}
+  .quick-program{font-size:10px!important;padding:9px 6px!important}
+}
+
 </style>
 </head>
 <body>
@@ -90,7 +149,7 @@ html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
 <div class="modal" id="genericModal"><div class="modal-card" id="genericCard"></div></div>
 
 <!-- ADMIN -->
-<div id="adminApp"><div class="admin-shell"><aside class="admin-side" id="adminSide"><div class="admin-brand"><div class="mark" style="width:39px;height:39px">V</div><div><b>VATLYTHPT ADMIN</b><small id="adminSideTeacher">Thầy Phạm Văn Dinh</small></div></div><div class="admin-nav"><button class="active" data-view="dashboard"><span>▦</span>Tổng quan</button><button data-view="content"><span>📘</span>Nội dung học</button><button data-view="classes"><span>👥</span>Lớp & tài khoản</button><button data-view="sources"><span>🗂</span>Thư viện nguồn</button><button data-view="questions"><span>❓</span>Ngân hàng câu hỏi</button><button data-view="ai"><span>✦</span>AI Studio</button><button data-view="settings"><span>⚙</span>Cài đặt</button></div><div class="admin-foot">Template V5 • Demo trình duyệt<br>Production cần backend/API.</div></aside><main class="admin-main"><div class="admin-top"><div style="display:flex;align-items:center;gap:9px"><button class="mini" onclick="document.getElementById('adminSide').classList.toggle('mobile-open')">☰</button><h2 id="adminPageTitle">Tổng quan</h2></div><div class="admin-user"><div id="adminTopAvatar" class="avatar" style="width:38px;height:38px">AD</div><div><b id="adminTopName">Thầy Dinh</b><small>Administrator</small></div><button class="mini red" onclick="logoutAdmin()">Đăng xuất</button></div></div><div class="admin-content" id="adminContent"></div></main></div></div>
+<div id="adminApp"><div class="admin-shell"><aside class="admin-side" id="adminSide"><div class="admin-brand"><div class="mark" style="width:39px;height:39px">V</div><div><b>VATLYTHPT ADMIN</b><small id="adminSideTeacher">Thầy Phạm Văn Dinh</small></div></div><div class="admin-nav"><button class="active" data-view="dashboard"><span>▦</span>Tổng quan</button><button data-view="content"><span>📘</span>Nội dung học</button><button data-view="classes"><span>👥</span>Lớp & tài khoản</button><button data-view="sources"><span>🗂</span>Thư viện nguồn</button><button data-view="questions"><span>❓</span>Ngân hàng câu hỏi</button><button data-view="ai"><span>✦</span>AI Studio</button><button data-view="settings"><span>⚙</span>Cài đặt</button></div><div class="admin-foot">Template V5.3 • Demo trình duyệt<br>Production cần backend/API.</div></aside><main class="admin-main"><div class="admin-top"><div style="display:flex;align-items:center;gap:9px"><button class="mini" onclick="document.getElementById('adminSide').classList.toggle('mobile-open')">☰</button><h2 id="adminPageTitle">Tổng quan</h2></div><div class="admin-user"><div id="adminTopAvatar" class="avatar" style="width:38px;height:38px">AD</div><div><b id="adminTopName">Thầy Dinh</b><small>Administrator</small></div><button class="mini red" onclick="logoutAdmin()">Đăng xuất</button></div></div><div class="admin-content" id="adminContent"></div></main></div></div>
 
 <!-- STUDENT -->
 <div class="student-dashboard" id="studentApp"><div class="student-head"><div class="container" style="display:flex;justify-content:space-between;align-items:center"><div class="brand"><div id="studentHeaderAvatar" class="mark" style="width:40px;height:40px">V</div><div class="brandtext"><b style="color:#fff">VẬT LÝ THPT</b><small id="studentHeaderInfo" style="color:#a9bfd9"></small></div></div><div class="toolbar"><button class="mini" onclick="openStudentProfile()">Cài đặt cá nhân</button><button class="mini" onclick="openStudentChangePassword()">Đổi mật khẩu</button><button class="mini red" onclick="logoutStudent()">Đăng xuất</button></div></div></div><div class="container student-main" id="studentMain"></div></div>
@@ -152,7 +211,7 @@ let loginMode='student',activeGrade='10',currentUser=null,currentStudent=null,se
 const defaultState={
  version:5,
  admin:{username:'admin',passwordHash:ADMIN_DEMO_HASH,updatedAt:new Date().toISOString()},
- teacherProfile:{fullName:'Thầy Phạm Văn Dinh',title:'Giáo viên Vật lí THPT',school:'Trường THPT B Nguyễn Huệ',address:'phường Nam Định, tỉnh Ninh Bình',phone:'0946007638',bio:'Học – Luyện – Kiểm tra – Cá nhân hóa bằng AI.',avatar:'',email:''},
+ teacherProfile:{fullName:'Thầy Phạm Văn Dinh',title:'Giáo viên Vật lí THPT',school:'Trường THPT B Nguyễn Huệ',address:'phường Nam Định, tỉnh Ninh Bình',phone:'0946007638',bio:'Học – Luyện – Kiểm tra – Cá nhân hóa bằng AI.',avatar:'',avatarUrl:'/assets/images/thay-dinh.jpg',email:''},
  classes:[{id:'c10a1',grade:10,name:'10A1',year:'2026–2027'},{id:'c10a2',grade:10,name:'10A2',year:'2026–2027'},{id:'c11a1',grade:11,name:'11A1',year:'2026–2027'},{id:'c12a1',grade:12,name:'12A1',year:'2026–2027'}],
  students:[{id:'s001',name:'Nguyễn Minh An',grade:10,classId:'c10a1',username:'10a1.001',passwordHash:STUDENT_DEMO_HASH,tempPasswordPlain:'VL1026',mustChange:true,status:'active',dob:'',avatar:'',email:'',createdAt:new Date().toISOString()},{id:'s002',name:'Trần Gia Bảo',grade:10,classId:'c10a1',username:null,passwordHash:null,tempPasswordPlain:'',mustChange:true,status:'no-account',dob:'',avatar:'',email:'',createdAt:new Date().toISOString()},{id:'s003',name:'Lê Khánh Chi',grade:10,classId:'c10a1',username:null,passwordHash:null,tempPasswordPlain:'',mustChange:true,status:'no-account',dob:'',avatar:'',email:'',createdAt:new Date().toISOString()}],
  passwordHistory:[{time:new Date().toISOString(),studentId:'s001',action:'Tạo tài khoản demo',actor:'Hệ thống',note:'Cấp mật khẩu tạm 6 ký tự; bắt buộc đổi lần đầu.'}],
@@ -174,7 +233,9 @@ async function sha256(str){const data=new TextEncoder().encode(str);const hash=a
 function passwordOK(p){return p.length>=6&&p.length<=12&&/[A-Za-zÀ-ỹ]/.test(p)&&/\d/.test(p)}
 function initials(name){return String(name||'HS').replace(/^Thầy\s+/i,'').split(/\s+/).filter(Boolean).slice(-2).map(x=>x[0]).join('').toUpperCase()||'HS'}
 function avatarHTML(url,name,cls='avatar'){return url?`<img class="${cls}" src="${escAttr(url)}" alt="Ảnh đại diện">`:`<div class="${cls}">${initials(name)}</div>`}
-function refreshTeacherUI(){const s=state(),p=s.teacherProfile;['teacherTopline','brandTeacher','teacherNamePublic','adminSideTeacher','adminTopName'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=id==='teacherTopline'?`Giáo viên: ${p.fullName}`:p.fullName});const t=document.getElementById('teacherTitlePublic');if(t)t.textContent=p.title||'';const b=document.getElementById('teacherBioPublic');if(b)b.textContent=p.bio||'';const f=document.getElementById('footerTeacher');if(f)f.textContent=`Vật lí THPT • ${p.fullName}`;const fn=document.getElementById('footerTeacherName');if(fn)fn.textContent=p.fullName;const fs=document.getElementById('footerTeacherSchool');if(fs)fs.textContent=[p.school,p.address].filter(Boolean).join(', ');const fp=document.getElementById('footerPhone');if(fp){fp.textContent=`SĐT/Zalo: ${p.phone||'0946007638'}`;fp.href=`tel:${String(p.phone||'0946007638').replace(/\s+/g,'')}`};const pub=document.getElementById('teacherAvatarPublic');if(pub)pub.outerHTML=p.avatar?`<img id="teacherAvatarPublic" class="profile-photo" src="${escAttr(p.avatar)}" alt="Ảnh giáo viên">`:`<div id="teacherAvatarPublic" class="profile-photo">${initials(p.fullName)}</div>`;const top=document.getElementById('adminTopAvatar');if(top)top.outerHTML=p.avatar?`<img id="adminTopAvatar" src="${escAttr(p.avatar)}" alt="Ảnh giáo viên">`:`<div id="adminTopAvatar" class="avatar" style="width:38px;height:38px">${initials(p.fullName)}</div>`}
+function teacherAvatarSource(p){return (p.avatar||p.avatarUrl||'').trim()}
+function teacherAvatarMarkup(p,id='teacherAvatarPublic',cls='profile-photo'){const src=teacherAvatarSource(p);if(!src)return `<div id="${id}" class="${cls}">${initials(p.fullName)}</div>`;return `<img id="${id}" class="${cls}" src="${escAttr(src)}" alt="Ảnh ${escAttr(p.fullName)}" onerror="this.outerHTML='<div id=&quot;${id}&quot; class=&quot;${cls}&quot;>${initials(p.fullName)}</div>'">`}
+function refreshTeacherUI(){const s=state(),p=s.teacherProfile;['teacherTopline','brandTeacher','teacherNamePublic','adminSideTeacher','adminTopName'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=id==='teacherTopline'?`Giáo viên: ${p.fullName}`:p.fullName});const t=document.getElementById('teacherTitlePublic');if(t)t.textContent=p.title||'';const b=document.getElementById('teacherBioPublic');if(b)b.textContent=p.bio||'';const f=document.getElementById('footerTeacher');if(f)f.textContent=`Vật lí THPT • ${p.fullName}`;const fn=document.getElementById('footerTeacherName');if(fn)fn.textContent=p.fullName;const fs=document.getElementById('footerTeacherSchool');if(fs)fs.textContent=[p.school,p.address].filter(Boolean).join(', ');const fp=document.getElementById('footerPhone');if(fp){fp.textContent=`SĐT/Zalo: ${p.phone||'0946007638'}`;fp.href=`tel:${String(p.phone||'0946007638').replace(/\s+/g,'')}`};const pub=document.getElementById('teacherAvatarPublic');if(pub)pub.outerHTML=teacherAvatarMarkup(p,'teacherAvatarPublic','profile-photo');const top=document.getElementById('adminTopAvatar');if(top){const src=teacherAvatarSource(p);top.outerHTML=src?`<img id="adminTopAvatar" src="${escAttr(src)}" alt="Ảnh giáo viên" onerror="this.outerHTML='<div id=&quot;adminTopAvatar&quot; class=&quot;avatar&quot; style=&quot;width:38px;height:38px&quot;>${initials(p.fullName)}</div>'">`:`<div id="adminTopAvatar" class="avatar" style="width:38px;height:38px">${initials(p.fullName)}</div>`}}
 function studentHeaderMarkup(st){const s=state(),cl=s.classes.find(c=>c.id===st.classId);return `<span class="account-chip"><span class="account-avatar">${st.avatar?`<img src="${escAttr(st.avatar)}" alt="Ảnh học sinh" style="width:100%;height:100%;border-radius:inherit;object-fit:cover">`:initials(st.name)}</span><span class="account-text"><span class="account-name">${esc(st.name)}</span><span class="account-sub">${esc(cl?.name||'Học sinh')}</span></span></span>`}
 function updatePublicAuthUI(){const a=readAuth(),s=state(),loginBtn=document.getElementById('loginBtn'),adminBtn=document.getElementById('adminBtn'),mobile=document.getElementById('mobileAuthArea');if(!loginBtn)return;if(a?.type==='student'){const st=s.students.find(x=>x.id===a.id);if(st){loginBtn.className='btn account-chip';loginBtn.innerHTML=studentHeaderMarkup(st);loginBtn.onclick=()=>{currentStudent=st;currentUser={type:'student',id:st.id};showStudent()};if(adminBtn)adminBtn.classList.remove('hidden');if(mobile)mobile.innerHTML=`<button class="btn btn-light full" onclick="currentStudent=state().students.find(x=>x.id==='${st.id}');currentUser={type:'student',id:'${st.id}'};showStudent();document.getElementById('mobileMenu').classList.add('hidden')">${studentHeaderMarkup(st)}</button><button class="btn btn-primary full" onclick="logoutStudent();document.getElementById('mobileMenu').classList.add('hidden')">Thoát</button>`;return}}if(a?.type==='admin'){loginBtn.className='btn btn-light';loginBtn.textContent='Vào Admin';loginBtn.onclick=()=>showAdmin(a.view||'dashboard');if(mobile)mobile.innerHTML=`<button class="btn btn-light full" onclick="showAdmin('${escAttr(a.view||'dashboard')}');document.getElementById('mobileMenu').classList.add('hidden')">Vào Admin</button><button class="btn btn-primary full" onclick="logoutAdmin();document.getElementById('mobileMenu').classList.add('hidden')">Đăng xuất</button>`;return}loginBtn.className='btn btn-light';loginBtn.textContent='Đăng nhập';loginBtn.onclick=()=>openLogin('student');if(mobile)mobile.innerHTML=`<button class="btn btn-light full" onclick="openLogin('student')">Học sinh</button><button class="btn btn-primary full" onclick="openLogin('admin')">Admin</button>`}
 function openLogin(mode='student'){switchLogin(mode);document.getElementById('loginModal').classList.add('open');document.getElementById('loginError').textContent='';setTimeout(()=>document.getElementById('loginUser').focus(),60)}
@@ -229,9 +290,9 @@ function editProvider(id){const s=state(),p=s.aiProviders.find(x=>x.id===id)||{i
 function saveProvider(id,exists){const s=state(),rec={id,name:providerName.value.trim()||'AI Provider',kind:providerKind.value,model:providerModel.value.trim(),endpoint:providerEndpoint.value.trim(),enabled:true};if(exists){const i=s.aiProviders.findIndex(x=>x.id===id);s.aiProviders[i]=rec}else s.aiProviders.push(rec);save(s);closeModal('genericModal');renderAdmin('ai');toast('Đã lưu kết nối AI.')}
 function deleteProvider(id){const s=state();s.aiProviders=s.aiProviders.filter(x=>x.id!==id);save(s);renderAdmin('ai')}
 async function testProvider(id){const s=state(),p=s.aiProviders.find(x=>x.id===id);if(!p?.endpoint){toast('Chưa cấu hình endpoint.');return}toast('Đang kiểm tra kết nối...');try{const r=await fetch(p.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'health',provider:p.kind})});if(!r.ok)throw new Error('HTTP '+r.status);toast(`Kết nối ${p.name} thành công.`)}catch(e){toast(`Chưa kết nối được: ${e.message}. Cần backend endpoint hoạt động.`)}}
-function settingsView(){const s=state(),p=s.teacherProfile;return `<div class="settings-grid"><div class="panel"><div class="panel-head"><div><h3>Hồ sơ giáo viên</h3><small class="muted">Thông tin này hiển thị ngắn gọn trên trang chủ.</small></div></div><div class="panel-body"><div class="profile-grid"><div class="avatar-editor">${avatarHTML(p.avatar,p.fullName,'avatar-large')}<input id="teacherAvatarInput" type="file" accept="image/*" style="max-width:100%"><div class="teacher-edit-note">Có thể thay ảnh bất cứ lúc nào.</div></div><div><div class="field"><label>Họ và tên</label><input id="teacherFullName" value="${escAttr(p.fullName)}"></div><div class="field"><label>Chức danh</label><input id="teacherTitle" value="${escAttr(p.title)}"></div><div class="field"><label>Đơn vị</label><input id="teacherSchool" value="${escAttr(p.school||'')}"></div><div class="field"><label>Địa chỉ</label><input id="teacherAddress" value="${escAttr(p.address||'')}"></div><div class="field"><label>SĐT/Zalo</label><input id="teacherPhone" value="${escAttr(p.phone||'')}"></div><div class="field"><label>Giới thiệu ngắn</label><textarea id="teacherBio" rows="3">${esc(p.bio||'')}</textarea></div><div class="field"><label>Email</label><input id="teacherEmail" value="${escAttr(p.email||'')}"></div><button class="btn btn-primary full" onclick="saveTeacherProfile()">Lưu hồ sơ giáo viên</button></div></div></div></div><div class="panel"><div class="panel-head"><h3>Tài khoản Admin</h3></div><div class="panel-body"><div class="field"><label>Tài khoản hiện tại</label><input id="adminUsernameNew" value="${escAttr(s.admin.username)}"></div><div class="field"><label>Mật khẩu hiện tại</label><input id="adminCurrentPass" type="password"></div><div class="field"><label>Mật khẩu mới (nếu muốn đổi)</label><input id="adminNewPass" type="password" maxlength="12" placeholder="6–12 ký tự, có chữ và số"></div><div class="field"><label>Nhập lại mật khẩu mới</label><input id="adminNewPass2" type="password" maxlength="12"></div><div id="adminSettingsError" class="error"></div><button class="btn btn-primary full" onclick="saveAdminAccount()">Cập nhật tài khoản Admin</button><div class="notice warn" style="margin-top:14px"><b>Production:</b> mật khẩu phải được hash ở backend, dùng HTTPS + HttpOnly session/cookie. Template tĩnh này chỉ để thử giao diện.</div></div></div></div>`}
+function settingsView(){const s=state(),p=s.teacherProfile;return `<div class="settings-grid"><div class="panel"><div class="panel-head"><div><h3>Hồ sơ giáo viên</h3><small class="muted">Thông tin này hiển thị ngắn gọn trên trang chủ.</small></div></div><div class="panel-body"><div class="profile-grid"><div class="avatar-editor">${avatarHTML(teacherAvatarSource(p),p.fullName,'avatar-large')}<input id="teacherAvatarInput" type="file" accept="image/*" style="max-width:100%"><div class="teacher-edit-note">Ảnh tải từ máy chỉ lưu trên trình duyệt hiện tại. Để mọi điện thoại cùng thấy ảnh, dùng URL ảnh dùng chung bên phải.</div></div><div><div class="field"><label>Họ và tên</label><input id="teacherFullName" value="${escAttr(p.fullName)}"></div><div class="field"><label>Chức danh</label><input id="teacherTitle" value="${escAttr(p.title)}"></div><div class="field"><label>Đơn vị</label><input id="teacherSchool" value="${escAttr(p.school||'')}"></div><div class="field"><label>Địa chỉ</label><input id="teacherAddress" value="${escAttr(p.address||'')}"></div><div class="field"><label>SĐT/Zalo</label><input id="teacherPhone" value="${escAttr(p.phone||'')}"></div><div class="field"><label>Ảnh đại diện dùng chung (URL)</label><input id="teacherAvatarUrl" value="${escAttr(p.avatarUrl||'/assets/images/thay-dinh.jpg')}" placeholder="/assets/images/thay-dinh.jpg"><small class="muted">Khuyên dùng: /assets/images/thay-dinh.jpg để ảnh hiện giống nhau trên mọi thiết bị.</small></div><div class="field"><label>Giới thiệu ngắn</label><textarea id="teacherBio" rows="3">${esc(p.bio||'')}</textarea></div><div class="field"><label>Email</label><input id="teacherEmail" value="${escAttr(p.email||'')}"></div><button class="btn btn-primary full" onclick="saveTeacherProfile()">Lưu hồ sơ giáo viên</button></div></div></div></div><div class="panel"><div class="panel-head"><h3>Tài khoản Admin</h3></div><div class="panel-body"><div class="field"><label>Tài khoản hiện tại</label><input id="adminUsernameNew" value="${escAttr(s.admin.username)}"></div><div class="field"><label>Mật khẩu hiện tại</label><input id="adminCurrentPass" type="password"></div><div class="field"><label>Mật khẩu mới (nếu muốn đổi)</label><input id="adminNewPass" type="password" maxlength="12" placeholder="6–12 ký tự, có chữ và số"></div><div class="field"><label>Nhập lại mật khẩu mới</label><input id="adminNewPass2" type="password" maxlength="12"></div><div id="adminSettingsError" class="error"></div><button class="btn btn-primary full" onclick="saveAdminAccount()">Cập nhật tài khoản Admin</button><div class="notice warn" style="margin-top:14px"><b>Production:</b> mật khẩu phải được hash ở backend, dùng HTTPS + HttpOnly session/cookie. Template tĩnh này chỉ để thử giao diện.</div></div></div></div>`}
 function bindSettings(){}
-async function saveTeacherProfile(){const s=state();s.teacherProfile.fullName=teacherFullName.value.trim()||s.teacherProfile.fullName;s.teacherProfile.title=teacherTitle.value.trim();s.teacherProfile.school=teacherSchool.value.trim();s.teacherProfile.address=teacherAddress.value.trim();s.teacherProfile.phone=teacherPhone.value.trim();s.teacherProfile.bio=teacherBio.value.trim();s.teacherProfile.email=teacherEmail.value.trim();const f=teacherAvatarInput.files[0];if(f)s.teacherProfile.avatar=await resizeImageFile(f,420);save(s);refreshTeacherUI();renderAdmin('settings');toast('Đã cập nhật hồ sơ giáo viên.')}
+async function saveTeacherProfile(){const s=state();s.teacherProfile.fullName=teacherFullName.value.trim()||s.teacherProfile.fullName;s.teacherProfile.title=teacherTitle.value.trim();s.teacherProfile.school=teacherSchool.value.trim();s.teacherProfile.address=teacherAddress.value.trim();s.teacherProfile.phone=teacherPhone.value.trim();s.teacherProfile.avatarUrl=teacherAvatarUrl.value.trim();s.teacherProfile.bio=teacherBio.value.trim();s.teacherProfile.email=teacherEmail.value.trim();const f=teacherAvatarInput.files[0];if(f)s.teacherProfile.avatar=await resizeImageFile(f,420);save(s);refreshTeacherUI();renderAdmin('settings');toast('Đã cập nhật hồ sơ giáo viên.')}
 async function saveAdminAccount(){const s=state(),err=adminSettingsError;err.textContent='';if((await sha256(adminCurrentPass.value))!==s.admin.passwordHash){err.textContent='Mật khẩu Admin hiện tại không đúng.';return}const u=adminUsernameNew.value.trim();if(u.length<4){err.textContent='Tài khoản Admin cần ít nhất 4 ký tự.';return}if(s.students.some(x=>x.username&&x.username.toLowerCase()===u.toLowerCase())){err.textContent='Tài khoản này đang trùng với học sinh.';return}if(adminNewPass.value){if(!passwordOK(adminNewPass.value)){err.textContent='Mật khẩu mới phải dài 6–12 ký tự và có ít nhất 1 chữ, 1 số.';return}if(adminNewPass.value!==adminNewPass2.value){err.textContent='Hai lần nhập mật khẩu mới không khớp.';return}s.admin.passwordHash=await sha256(adminNewPass.value)}s.admin.username=u;s.admin.updatedAt=new Date().toISOString();save(s);toast('Đã cập nhật tài khoản Admin.');renderAdmin('settings')}
 function placeholderPanel(title,desc){return `<div class="panel"><div class="panel-head"><h3>${esc(title)}</h3></div><div class="panel-body"><p class="muted">${esc(desc)}</p><div class="notice info">Module giao diện đã chừa sẵn để nối backend/dữ liệu thật.</div></div></div>`}
 function downloadExcel(filename,headers,rows,sheetName){const escx=v=>String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');let table=`<table><thead><tr>${headers.map(h=>`<th>${escx(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${escx(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>${escx(sheetName)}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><style>table{border-collapse:collapse}th,td{border:1px solid #999;padding:6px 10px}th{font-weight:bold;background:#d9eaf7}
@@ -250,6 +311,62 @@ html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
 }
 @media(max-width:390px){
   .container{width:calc(100% - 20px)}.nav{gap:5px}.brandtext b{font-size:14px}.mark{width:40px;height:40px;flex-basis:40px}.actions #loginBtn{max-width:108px;padding:6px 7px!important}.actions #loginBtn .account-name{max-width:56px}.menu-btn{width:42px;height:42px;flex-basis:42px}.hero h1{font-size:36px!important}.badge{font-size:9.5px}.quick-program{font-size:10.5px}.homepage-profile .teacher{grid-template-columns:50px minmax(0,1fr)!important}.homepage-profile .profile-photo{width:50px!important;height:50px!important;min-width:50px}.lesson-paths{grid-template-columns:1fr 1fr!important}}
+
+
+/* V5.3: phone typography + compact teacher profile + cross-device avatar */
+@media (max-width:760px){
+  body{font-size:14px;overflow-x:hidden}
+  .container{width:calc(100% - 24px)!important}
+  .site-header{backdrop-filter:blur(12px)}
+  .nav{height:64px!important;gap:7px!important}
+  .mark{width:42px!important;height:42px!important;border-radius:13px!important;font-size:18px!important;flex:0 0 42px!important}
+  .brand{gap:8px!important;min-width:0!important}
+  .brandtext b{font-size:15px!important;letter-spacing:.1px!important;white-space:nowrap}
+  .actions{gap:6px!important;margin-left:auto;min-width:0}
+  .actions #loginBtn{height:42px!important;max-width:142px!important;padding:5px 8px!important;border-radius:12px!important;min-width:0}
+  .actions #loginBtn.account-chip{gap:7px!important}
+  .actions #loginBtn .account-avatar{width:32px!important;height:32px!important;flex:0 0 32px!important;border-radius:9px!important}
+  .actions #loginBtn .account-name{font-size:11px!important;max-width:72px!important}
+  .menu-btn{width:42px!important;height:42px!important;flex:0 0 42px!important;border-radius:12px!important}
+  .hero{padding:24px 0 18px!important}
+  .hero-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .badge{font-size:9px!important;line-height:1.25!important;padding:6px 9px!important;letter-spacing:.35px!important}
+  .hero h1{font-size:clamp(30px,8.6vw,36px)!important;line-height:1.04!important;letter-spacing:-1.2px!important;margin:12px 0 10px!important;max-width:100%}
+  .hero p{font-size:13.5px!important;line-height:1.55!important;margin:0 0 9px!important;color:#c3d5eb!important}
+  .home-mini-note{font-size:10px!important;line-height:1.4!important;margin-top:9px!important;color:#bed3e9!important}
+  .homepage-profile{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;display:grid!important;gap:8px!important}
+  .homepage-profile .float{float:none!important;position:static!important;justify-self:end!important;margin:0!important;font-size:9px!important;padding:6px 9px!important;border-radius:9px!important;line-height:1.15!important}
+  .homepage-profile .orbit,.homepage-profile .core{display:none!important}
+  .homepage-profile .teacher{position:static!important;display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;gap:10px!important;align-items:center!important;width:100%!important;margin:0!important;padding:10px 12px!important;border-radius:14px!important;background:rgba(4,20,43,.78)!important;border:1px solid rgba(255,255,255,.12)!important}
+  .homepage-profile .profile-photo{width:48px!important;height:48px!important;min-width:48px!important;border-radius:14px!important;margin:0!important;object-fit:cover!important;font-size:15px!important}
+  .teacher-profile-meta{min-width:0!important}
+  .teacher-profile-meta b{font-size:13.5px!important;line-height:1.25!important;margin:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  .teacher-profile-meta small{font-size:10.5px!important;line-height:1.3!important;margin-top:2px!important}
+  .teacher-profile-meta p{font-size:9.5px!important;line-height:1.35!important;margin:3px 0 0!important;display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;overflow:hidden!important}
+  .quick-programs{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin-top:0!important;padding-top:10px!important}
+  .quick-program{padding:10px 7px!important;min-height:48px!important;border-radius:13px!important;font-size:10.5px!important;line-height:1.2!important}
+  .curriculum-section{padding-top:26px!important}
+  .section-head h2{font-size:26px!important;letter-spacing:-.7px!important}
+  .section-head p{font-size:12.5px!important}
+  .grade-tab{font-size:11px!important;padding:9px 8px!important}
+  .search input{font-size:12px!important}
+  .chapter-head{padding:12px!important}.chapter-title b{font-size:12px!important}.chapter-title small{font-size:10px!important}
+  .lesson-row{padding:11px!important}.lesson-row b{font-size:12px!important}.lesson-link{font-size:9px!important;padding:6px 7px!important}
+  footer{font-size:12px!important}.footer-contact{line-height:1.55!important}
+}
+@media (max-width:390px){
+  .container{width:calc(100% - 18px)!important}
+  .brandtext b{font-size:13.5px!important}
+  .actions #loginBtn{max-width:118px!important}
+  .actions #loginBtn .account-name{max-width:56px!important}
+  .hero h1{font-size:30px!important;line-height:1.05!important}
+  .hero p{font-size:12.8px!important}
+  .home-mini-note{font-size:9.5px!important}
+  .homepage-profile .teacher{grid-template-columns:44px minmax(0,1fr)!important;padding:9px 10px!important}
+  .homepage-profile .profile-photo{width:44px!important;height:44px!important;min-width:44px!important;border-radius:12px!important}
+  .teacher-profile-meta b{font-size:12.5px!important}.teacher-profile-meta small{font-size:9.8px!important}.teacher-profile-meta p{font-size:9px!important}
+  .quick-program{font-size:10px!important;padding:9px 6px!important}
+}
 
 </style></head><body>${table}</body></html>`;downloadBlob(filename,new Blob(['﻿',html],{type:'application/vnd.ms-excel;charset=utf-8'}))}
 function downloadBlob(name,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();const u=a.href;a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
