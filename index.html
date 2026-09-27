@@ -1,442 +1,252 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phòng Thí Nghiệm Vật Lí Ảo & Luyện Thi THPT - TSA - HSA | Thầy Phạm Văn Dinh</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Be Vietnam Pro', sans-serif; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .chapter-card { transition: all 0.3s ease; }
-        .chapter-card:hover { transform: translateY(-3px); box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.08); }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07162e" />
+  <meta name="description" content="Vật Lý THPT – Thầy Phạm Văn Dinh. Hệ thống học Vật lí 10, 11, 12; tự luyện; kiểm tra sau bài; thi thử TN THPT, HSA, TSA và luyện tập cá nhân hóa bằng AI." />
+  <title>Vật Lý THPT • Thầy Phạm Văn Dinh</title>
+  <style>
+    :root{
+      --navy:#07162e; --navy2:#0b2141; --blue:#1868db; --cyan:#27c5ef;
+      --orange:#ff8b3d; --green:#26b585; --violet:#7257e6; --red:#e75b62;
+      --ink:#15233b; --muted:#66748a; --line:#e6edf5; --soft:#f5f8fc; --white:#fff;
+      --shadow:0 18px 48px rgba(12,38,74,.12); --shadow-sm:0 8px 24px rgba(12,38,74,.08);
+      --radius:22px; --radius-sm:14px; --max:1240px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    button,input{font:inherit}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:16px;top:12px;z-index:999;background:#fff;padding:10px 14px;border-radius:10px}
+
+    /* Header */
+    .topbar{background:#061328;color:#c8d6ec;font-size:13px}
+    .topbar .container{height:34px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .topbar strong{color:#fff}.toplinks{display:flex;gap:18px;align-items:center}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(15px);border-bottom:1px solid rgba(214,225,239,.84)}
+    .navbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brandmark{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#fff;box-shadow:0 9px 20px rgba(24,104,219,.24);font-weight:900;font-size:20px;position:relative;overflow:hidden}
+    .brandmark:before{content:"";position:absolute;width:34px;height:34px;border:1px solid rgba(255,255,255,.55);border-radius:50%;transform:rotate(-25deg)}
+    .brandmark span{position:relative;z-index:2}
+    .brandtext b{display:block;font-size:17px;letter-spacing:.5px;color:#0a2142}.brandtext small{display:block;color:#708099;font-size:11px;margin-top:1px}
+    nav{display:flex;align-items:center;gap:4px}
+    nav a{font-size:13.5px;font-weight:750;color:#33435b;padding:11px 11px;border-radius:10px;transition:.2s}
+    nav a:hover,nav a.active{color:#0a5ec9;background:#edf5ff}
+    .nav-actions{display:flex;align-items:center;gap:9px}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+    .btn:hover{transform:translateY(-1px)}.btn-primary{background:linear-gradient(135deg,var(--blue),#218bdd);color:white;box-shadow:0 9px 22px rgba(24,104,219,.24)}
+    .btn-light{background:#f3f7fb;color:#1e3656;border:1px solid #e1e9f3}.btn-ghost{background:transparent;color:#1d3c63;border:1px solid #d9e4f1}
+    .menu-toggle{display:none;width:42px;height:42px;border:0;border-radius:11px;background:#f2f6fb;font-size:22px;color:#173354}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 73% 20%,rgba(42,181,239,.22),transparent 28%),radial-gradient(circle at 92% 80%,rgba(74,110,255,.18),transparent 24%),linear-gradient(135deg,#061328 0%,#0a2142 56%,#0d2f57 100%);color:#fff;padding:72px 0 64px}
+    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to right,#000,transparent 85%)}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:#d8e8ff}.eyebrow i{width:8px;height:8px;border-radius:50%;background:#36dca4;box-shadow:0 0 0 5px rgba(54,220,164,.13)}
+    .hero h1{font-size:clamp(40px,5vw,68px);line-height:1.02;margin:18px 0 18px;letter-spacing:-2.5px}.hero h1 span{background:linear-gradient(90deg,#66d8ff,#8da8ff);-webkit-background-clip:text;color:transparent}
+    .hero p{font-size:18px;color:#bfd0e6;max-width:700px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero .btn{padding:14px 19px;border-radius:13px}.hero .btn-light{background:#fff;color:#0a2c56;border:0}.hero .btn-ghost{border-color:rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.05)}
+    .hero-badges{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}.hero-badges span{font-size:12px;color:#dce9f8;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);padding:8px 10px;border-radius:10px}
+    .physics-card{position:relative;min-height:390px;border-radius:30px;background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.15);box-shadow:0 35px 70px rgba(0,0,0,.2);backdrop-filter:blur(10px);overflow:hidden}
+    .orbit{position:absolute;inset:28px;border:1px solid rgba(255,255,255,.12);border-radius:50%;transform:rotate(-19deg)}.orbit.o2{inset:75px 42px;transform:rotate(26deg)}.orbit.o3{inset:110px 62px;transform:rotate(-55deg)}
+    .atom-core{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#fff,#80dcff 18%,#1d8ae5 58%,#0a4aa0);box-shadow:0 0 42px rgba(67,190,250,.8)}
+    .particle{position:absolute;width:13px;height:13px;border-radius:50%;background:#ff9c4b;box-shadow:0 0 16px rgba(255,156,75,.9)}.p1{top:44px;left:50%}.p2{right:50px;top:55%}.p3{left:75px;bottom:55px}
+    .teacher-mini{position:absolute;left:24px;right:24px;bottom:22px;display:flex;align-items:center;gap:13px;background:rgba(5,20,42,.74);border:1px solid rgba(255,255,255,.12);padding:14px 16px;border-radius:17px}.avatar{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#dfe9f5,#9bbbe1);display:grid;place-items:center;color:#173e6c;font-weight:900}.teacher-mini b{display:block}.teacher-mini span{display:block;font-size:12px;color:#b8cbe3;margin-top:2px}
+    .float-chip{position:absolute;right:22px;top:22px;background:#fff;color:#163453;padding:9px 11px;border-radius:12px;font-size:12px;font-weight:850;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+
+    /* Generic sections */
+    section{padding:72px 0}.section-soft{background:var(--soft)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}.section-head .kicker{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}.section-head h2{font-size:clamp(28px,3.5vw,42px);line-height:1.15;margin:7px 0 7px;letter-spacing:-1.2px}.section-head p{color:var(--muted);margin:0;max-width:720px}.section-head .rightnote{font-size:13px;color:#718198;background:#fff;border:1px solid var(--line);padding:10px 13px;border-radius:12px;white-space:nowrap}
+    .stats{margin-top:-30px;position:relative;z-index:5}.stats-inner{background:#fff;border:1px solid #e4ecf5;border-radius:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}.stat{padding:22px 24px;border-right:1px solid #e8eef5}.stat:last-child{border-right:0}.stat b{display:block;font-size:27px;color:#0a3973;line-height:1}.stat span{display:block;font-size:12px;color:#738096;margin-top:7px}
+
+    /* Program cards */
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.program{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;min-height:208px;box-shadow:var(--shadow-sm);overflow:hidden;transition:.22s}.program:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.program:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-38px;top:-42px;background:var(--tint)}.program .icon{width:46px;height:46px;border-radius:14px;background:var(--tint);display:grid;place-items:center;font-size:22px;margin-bottom:22px}.program h3{margin:0 0 7px;font-size:20px}.program p{margin:0;color:var(--muted);font-size:13.5px;max-width:88%}.program .go{display:inline-flex;margin-top:22px;color:var(--accent);font-size:13px;font-weight:900;gap:5px}.p10{--accent:#166fe5;--tint:#e9f3ff}.p11{--accent:#7a54de;--tint:#f0ebff}.p12{--accent:#d65b66;--tint:#fff0f1}.ptn{--accent:#ef8b2f;--tint:#fff5e9}.phsa{--accent:#1c9c75;--tint:#e8f8f1}.ptsa{--accent:#267db3;--tint:#e9f6ff}
+
+    /* Learning flow */
+    .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.flow-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px 15px;min-height:147px;position:relative}.flow-card .num{font-size:11px;font-weight:900;color:#fff;background:#183e70;border-radius:7px;padding:4px 7px;display:inline-block}.flow-card h4{font-size:14px;margin:17px 0 5px}.flow-card p{font-size:11.5px;color:var(--muted);margin:0}.flow-card:not(:last-child):after{content:"›";position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:20px;height:20px;background:#fff;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-weight:900;color:#66809d;z-index:2}
+
+    /* Curriculum */
+    .curriculum-wrap{background:#fff;border:1px solid #dfe8f2;border-radius:25px;box-shadow:var(--shadow);overflow:hidden}.curriculum-top{padding:20px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(180deg,#fff,#fbfdff)}
+    .grade-tabs{display:flex;background:#f1f5fa;padding:4px;border-radius:13px;gap:3px}.grade-tabs button{border:0;padding:10px 18px;border-radius:10px;background:transparent;font-weight:850;color:#60728a;cursor:pointer}.grade-tabs button.active{background:#fff;color:#0a5dca;box-shadow:0 4px 13px rgba(28,62,102,.1)}
+    .curr-tools{display:flex;align-items:center;gap:8px}.searchbox{display:flex;align-items:center;gap:8px;border:1px solid #dfe7f0;border-radius:11px;padding:8px 11px;background:#fff;min-width:260px}.searchbox input{border:0;outline:0;width:100%;color:#21344e}.smallbtn{border:1px solid #dfe7f0;background:#fff;color:#49617d;padding:9px 11px;border-radius:10px;font-weight:800;font-size:12px;cursor:pointer}
+    .grade-summary{display:grid;grid-template-columns:1fr auto;gap:16px;padding:22px 24px;background:linear-gradient(120deg,#092345,#0d417a);color:#fff}.grade-summary h3{margin:0 0 4px;font-size:25px}.grade-summary p{margin:0;color:#c3d6eb;font-size:13px}.summary-badges{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.summary-badges span{padding:7px 9px;border-radius:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:11px;font-weight:800}
+    .chapters{padding:16px}.chapter{border:1px solid #e3ebf4;border-radius:17px;margin-bottom:12px;overflow:hidden;background:#fff}.chapter:last-child{margin-bottom:0}.chapter-head{width:100%;border:0;background:#fff;display:grid;grid-template-columns:auto 1fr auto auto;gap:13px;align-items:center;padding:16px 17px;cursor:pointer;text-align:left}.chapter-head:hover{background:#f9fbfe}.chap-index{width:38px;height:38px;border-radius:11px;background:#edf5ff;color:#0c64d2;display:grid;place-items:center;font-weight:950;font-size:12px}.chapter-head b{display:block;font-size:14.5px;color:#163352}.chapter-head small{display:block;margin-top:2px;color:#8492a5;font-size:11.5px}.chap-count{font-size:11px;font-weight:850;color:#55708e;background:#f1f5fa;border-radius:8px;padding:6px 8px}.chev{font-size:20px;color:#6e8197;transition:.2s}.chapter.open .chev{transform:rotate(180deg)}
+    .lesson-list{display:none;border-top:1px solid #edf1f6;background:#fbfdff}.chapter.open .lesson-list{display:block}.lesson{border-bottom:1px solid #edf1f6}.lesson:last-child{border-bottom:0}.lesson-main{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:13px 17px;cursor:pointer}.lesson-main:hover{background:#f4f8fd}.lesson-no{width:32px;height:32px;border-radius:10px;border:1px solid #dce7f3;background:#fff;display:grid;place-items:center;color:#315f8f;font-size:11px;font-weight:900}.lesson-title{font-size:13.5px;font-weight:770;color:#263f5d}.lesson-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}.tag{font-size:9.5px;padding:3px 6px;border-radius:6px;background:#edf4fb;color:#56718e;font-weight:800}.tag.practice{background:#ecf8f2;color:#228361}.tag.exercise{background:#fff2e7;color:#b76a26}.lesson-open{color:#0d68d7;font-size:11px;font-weight:900}.lesson-detail{display:none;padding:0 17px 15px 71px}.lesson.expanded .lesson-detail{display:block}.lesson-modules{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}.module{border:1px solid #dce7f2;background:#fff;border-radius:10px;padding:9px 7px;text-align:center;font-size:10px;font-weight:800;color:#4d6681;cursor:pointer}.module:hover{color:#0a65d2;border-color:#a9ccec;background:#f3f8ff}.module.ai{background:linear-gradient(135deg,#eff8ff,#f2efff);color:#5b49bb}
+    .extra-item{padding:12px 17px 12px 71px;border-bottom:1px solid #edf1f6;color:#617289;font-size:12px}.extra-item:last-child{border-bottom:0}
+    .no-result{padding:34px;text-align:center;color:#73859c}
+
+    /* Assessment */
+    .assessment{display:grid;grid-template-columns:1.08fr .92fr;gap:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:21px;padding:24px;box-shadow:var(--shadow-sm)}.panel h3{margin:0 0 8px;font-size:21px}.panel>p{margin:0 0 20px;color:var(--muted);font-size:13px}.exam-part{display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:center;padding:14px 0;border-bottom:1px dashed #dfe7f0}.exam-part:last-child{border:0}.exam-icon{width:39px;height:39px;border-radius:11px;background:#edf5ff;color:#1768d7;display:grid;place-items:center;font-weight:900}.exam-part b{font-size:13px}.exam-part small{display:block;color:#75849a;margin-top:2px}.score{font-size:12px;font-weight:900;background:#f3f6fa;padding:7px 9px;border-radius:8px;color:#3c5878}.matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.matrix div{border-radius:14px;padding:15px 10px;text-align:center;border:1px solid var(--line);background:#fbfdff}.matrix b{font-size:25px;display:block;line-height:1.1}.matrix span{font-size:10px;color:#718097}.m1 b{color:#1769d8}.m2 b{color:#7157da}.m3 b{color:#e08a2d}.m4 b{color:#d85662}.assessment-note{margin-top:17px;padding:12px 13px;border-radius:12px;background:#f2f7ff;color:#3b5e85;font-size:11.5px}
+
+    /* AI */
+    .ai-section{background:radial-gradient(circle at 80% 10%,rgba(58,197,255,.14),transparent 25%),linear-gradient(140deg,#07152d,#0b2850);color:#fff}.ai-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:36px;align-items:center}.ai-section .kicker{color:#63d7ff}.ai-section h2{font-size:clamp(30px,4vw,47px);line-height:1.08;margin:8px 0 14px}.ai-section p{color:#b9cee6}.ai-points{display:grid;gap:10px;margin-top:24px}.ai-point{display:flex;gap:10px;align-items:flex-start}.check{width:22px;height:22px;border-radius:7px;background:#193f70;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#65e0b0;font-size:12px;flex:0 0 auto}.ai-point b{font-size:13px;display:block}.ai-point span{font-size:11.5px;color:#adc2dc}
+    .ai-dashboard{background:#fff;color:var(--ink);border-radius:25px;padding:20px;box-shadow:0 30px 60px rgba(0,0,0,.22)}.dash-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:15px}.dash-student{display:flex;gap:10px;align-items:center}.dash-student .avatar{width:40px;height:40px;border-radius:12px;font-size:12px}.dash-student b{font-size:13px}.dash-student small{display:block;color:#718299;font-size:10px}.ai-status{font-size:9px;font-weight:900;color:#18875f;background:#eaf9f2;border-radius:8px;padding:6px 8px}.skill{display:grid;grid-template-columns:145px 1fr 38px;gap:9px;align-items:center;margin:11px 0}.skill label{font-size:10.5px;color:#50657f}.bar{height:8px;background:#ecf1f6;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#1d76df,#3fc0eb)}.skill strong{font-size:10.5px;color:#34506d;text-align:right}.recommend{margin-top:15px;border:1px solid #dfe9f5;border-radius:14px;padding:12px;background:#f8fbff}.recommend b{font-size:11.5px;color:#214b78}.recommend p{font-size:10.5px;color:#64758a;margin:5px 0 0}.dash-actions{display:flex;gap:8px;margin-top:11px}.dash-actions button{flex:1;border:0;border-radius:9px;padding:9px;font-size:10px;font-weight:850;cursor:pointer}.dash-actions .make{background:#1769d8;color:#fff}.dash-actions .view{background:#edf3fa;color:#45617f}
+
+    /* Admin teaser */
+    .admin-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}.admin-menu{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.admin-item{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;display:flex;gap:10px;align-items:center}.admin-item i{width:33px;height:33px;border-radius:10px;background:#edf5ff;display:grid;place-items:center;font-style:normal}.admin-item b{font-size:12px}.admin-item small{display:block;font-size:9.5px;color:#8795a6;margin-top:2px}.import-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow-sm)}.drop{border:1.5px dashed #a8bdd4;border-radius:15px;padding:18px;text-align:center;background:#f8fbff}.drop b{display:block;font-size:13px}.drop span{display:block;color:#74869b;font-size:10.5px;margin-top:3px}.health{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:13px}.health div{border-radius:11px;padding:11px;background:#f6f9fc;text-align:center}.health b{font-size:17px;display:block}.health span{font-size:9.5px;color:#7a899a}.health .ok b{color:#16865e}.health .warn b{color:#d48725}.health .bad b{color:#d5535e}
+
+    /* Footer */
+    footer{background:#061328;color:#aebfd6;padding:44px 0 20px}.footer-grid{display:grid;grid-template-columns:1.25fr repeat(3,.7fr);gap:30px}.footer-brand p{font-size:12px;max-width:420px}.footer-col h4{color:#fff;margin:0 0 11px;font-size:12px}.footer-col a{display:block;font-size:11px;margin:7px 0;color:#aebfd6}.footer-bottom{border-top:1px solid rgba(255,255,255,.09);margin-top:28px;padding-top:15px;display:flex;justify-content:space-between;gap:12px;font-size:10.5px}
+
+    /* Drawer & toast */
+    .drawer{display:none;position:fixed;inset:0;z-index:200;background:rgba(4,16,34,.5)}.drawer.open{display:block}.drawer-panel{margin-left:auto;width:min(340px,86vw);height:100%;background:#fff;padding:18px;box-shadow:-20px 0 50px rgba(0,0,0,.14)}.drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.drawer-nav a{display:block;padding:13px 10px;border-bottom:1px solid var(--line);font-weight:750;color:#334b68}.close{border:0;background:#eef3f8;border-radius:10px;width:38px;height:38px;font-size:20px}.toast{position:fixed;right:22px;bottom:22px;z-index:999;background:#102d50;color:#fff;padding:12px 15px;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.18);font-size:12px;transform:translateY(30px);opacity:0;pointer-events:none;transition:.25s}.toast.show{transform:translateY(0);opacity:1}
+    .backtop{position:fixed;right:18px;bottom:78px;z-index:80;width:42px;height:42px;border:0;border-radius:13px;background:#fff;color:#174a80;box-shadow:0 10px 28px rgba(15,47,82,.18);display:none;cursor:pointer}.backtop.show{display:grid;place-items:center}
+
+    @media (max-width:1050px){nav{display:none}.menu-toggle{display:block}.hero-grid{grid-template-columns:1fr .72fr;gap:30px}.physics-card{min-height:330px}.programs{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(3,1fr)}.flow-card:nth-child(3):after{display:none}.lesson-modules{grid-template-columns:repeat(3,1fr)}.ai-grid,.admin-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}.footer-grid .footer-col:last-child{display:none}}
+    @media (max-width:760px){.topbar{display:none}.navbar{height:68px}.brandtext small{display:none}.nav-actions .btn{display:none}.hero{padding:52px 0 46px}.hero-grid{grid-template-columns:1fr}.physics-card{min-height:285px}.hero h1{font-size:45px}.hero p{font-size:15.5px}.stats{margin-top:0;padding-top:15px}.stats-inner{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #e8eef5}.section-head{align-items:flex-start;flex-direction:column}.section-head .rightnote{white-space:normal}.programs{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.flow-card:nth-child(even):after{display:none}.grade-summary{grid-template-columns:1fr}.summary-badges{justify-content:flex-start}.curriculum-top{align-items:stretch}.grade-tabs{width:100%}.grade-tabs button{flex:1;padding:10px 8px}.curr-tools{width:100%}.searchbox{min-width:0;flex:1}.curr-tools .smallbtn{display:none}.chapter-head{grid-template-columns:auto 1fr auto}.chap-count{display:none}.lesson-main{grid-template-columns:38px 1fr}.lesson-open{display:none}.lesson-detail{padding-left:66px}.lesson-modules{grid-template-columns:repeat(2,1fr)}.assessment{grid-template-columns:1fr}.matrix{grid-template-columns:repeat(2,1fr)}.ai-grid{gap:22px}.skill{grid-template-columns:120px 1fr 32px}.admin-menu{grid-template-columns:1fr}.health{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid .footer-col:nth-child(4){display:none}.footer-bottom{flex-direction:column}.container{width:min(var(--max),calc(100% - 24px))}section{padding:56px 0}}
+    @media (max-width:460px){.hero h1{font-size:39px;letter-spacing:-1.8px}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.hero-badges span:nth-child(n+3){display:none}.physics-card{min-height:250px}.orbit{inset:20px}.teacher-mini{left:15px;right:15px;bottom:14px}.stats-inner{border-radius:16px}.stat{padding:17px}.stat b{font-size:23px}.flow{grid-template-columns:1fr}.flow-card:after{display:none!important}.grade-summary{padding:19px}.chapters{padding:10px}.chapter-head{padding:14px 12px}.lesson-main{padding:12px}.lesson-detail{padding:0 12px 12px 58px}.footer-grid{grid-template-columns:1fr}.footer-grid .footer-col{display:block!important}.footer-grid .footer-col:nth-child(4){display:none!important}}
+  </style>
 </head>
-<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
-
-    <!-- Top Bar -->
-    <div class="bg-slate-900 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
-            <span class="font-medium">Trường THPT B Nguyễn Huệ, Ninh Bình • Tổ Lí - Hóa - Công Nghệ</span>
-            <span class="text-blue-400 font-semibold">⚡ Cổng thông tin học tập & mô phỏng trực tuyến</span>
-        </div>
-    </div>
-
-    <!-- Header / Hero Section with Personalization -->
-    <header class="bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 text-white shadow-2xl relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1.5px,transparent_1.5px)] [background-size:20px_20px]"></div>
-        <div class="max-w-7xl mx-auto px-4 py-10 md:py-14 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            
-            <!-- Left: Title & Intro -->
-            <div class="text-center md:text-left flex-1">
-                <span class="inline-flex items-center gap-1.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Phòng Thí Nghiệm Ảo 4.0
-                </span>
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                    VẬT LÍ THPT & LUYỆN THI <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">TSA - HSA</span>
-                </h1>
-                <p class="text-slate-300 text-sm md:text-base mt-3 leading-relaxed max-w-2xl">
-                    Hệ thống thí nghiệm mô phỏng tương tác trực quan theo chương trình Kết nối tri thức và phương pháp ôn luyện tư duy khoa học đỉnh cao.
-                </p>
-                
-                <!-- Quick badges -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-2.5 mt-5">
-                    <span class="bg-white/10 text-xs font-medium px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm">📚 SGK Lớp 10, 11, 12</span>
-                    <span class="bg-white/10 text-xs font-medium px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm">🎯 Ôn Thi Tốt Nghiệp</span>
-                    <span class="bg-white/10 text-xs font-medium px-3.5 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm">🚀 Tư duy TSA & HSA</span>
-                </div>
-            </div>
-
-            <!-- Right: Teacher Profile Card (Personalization) -->
-            <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 text-center shadow-2xl flex flex-col items-center min-w-[300px]">
-                <div class="relative w-24 h-24 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-xl mb-3 bg-slate-800">
-                    <!-- Ảnh chân dung thầy Dinh (thầy nhớ đặt file ảnh là anh-thay-dinh.jpg chung thư mục) -->
-                    <img src="anh-thay-dinh.jpg" alt="Thầy Phạm Văn Dinh" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'">
-                </div>
-                <h2 class="font-extrabold text-lg text-white">Thầy Phạm Văn Dinh</h2>
-                <p class="text-xs text-blue-300 font-semibold mt-0.5">Tổ trưởng chuyên môn Lí - Hóa - Công nghệ</p>
-                <p class="text-xs text-slate-400 mt-0.5">Trường THPT B Nguyễn Huệ</p>
-                <div class="mt-4 pt-3 border-t border-white/15 w-full flex justify-around text-xs text-cyan-300 font-bold">
-                    <span>🔬 Thực nghiệm</span>
-                    <span>📈 Sáng tạo</span>
-                    <span>💡 Tận tâm</span>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- Navigation Tabs -->
-    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 overflow-x-auto">
-            <ul class="flex space-x-2 py-3 min-w-max">
-                <li><button onclick="switchTab('lop10')" id="btn-lop10" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition bg-blue-600 text-white shadow-lg shadow-blue-600/25">📚 Vật lí 10</button></li>
-                <li><button onclick="switchTab('lop11')" id="btn-lop11" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">📚 Vật lí 11</button></li>
-                <li><button onclick="switchTab('lop12')" id="btn-lop12" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">📚 Vật lí 12</button></li>
-                <li><button onclick="switchTab('thpt')" id="btn-thpt" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🎯 Ôn Thi Tốt Nghiệp</button></li>
-                <li><button onclick="switchTab('hsa')" id="btn-hsa" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🔥 Luyện thi HSA</button></li>
-                <li><button onclick="switchTab('tsa')" id="btn-tsa" class="tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100">🚀 Luyện thi TSA</button></li>
-            </ul>
-        </div>
+<body>
+<a class="skip" href="#curriculum">Bỏ qua đến mục lục bài học</a>
+<div class="topbar"><div class="container"><div><strong>VATLYTHPT.COM</strong> • Hệ sinh thái học Vật lí THPT</div><div class="toplinks"><span>Giáo viên: Thầy Phạm Văn Dinh</span><span>📘 Hướng dẫn</span></div></div></div>
+<header>
+  <div class="container navbar">
+    <a class="brand" href="#home" aria-label="Vật Lý THPT - Trang chủ">
+      <div class="brandmark"><span>V</span></div><div class="brandtext"><b>VẬT LÝ THPT</b><small>Thầy Phạm Văn Dinh</small></div>
+    </a>
+    <nav aria-label="Điều hướng chính">
+      <a class="active" href="#home">Trang chủ</a><a href="#curriculum" data-grade="10">Vật lí 10</a><a href="#curriculum" data-grade="11">Vật lí 11</a><a href="#curriculum" data-grade="12">Vật lí 12</a><a href="#exam">TN THPT</a><a href="#exam">HSA</a><a href="#exam">TSA</a>
     </nav>
+    <div class="nav-actions"><button class="btn btn-light" onclick="toast('Khu vực học sinh sẽ kết nối với hệ thống đăng nhập.')">Đăng nhập</button><a class="btn btn-primary" href="#curriculum">Bắt đầu học</a><button class="menu-toggle" id="menuBtn" aria-label="Mở menu">☰</button></div>
+  </div>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><i></i> HỌC VẬT LÍ THEO LỘ TRÌNH • CÁ NHÂN HÓA BẰNG AI</div>
+        <h1>VẬT LÍ THPT<br><span>HIỂU BẢN CHẤT.</span><br>LÀM CHỦ BÀI TOÁN.</h1>
+        <p>Hệ thống Vật lí 10–11–12 được tổ chức khoa học theo <b>Lớp → Chương → Bài</b>, kết hợp video, mô phỏng, tự luyện 3 dạng trắc nghiệm, kiểm tra sau bài và luyện tập cá nhân hóa.</p>
+        <div class="hero-actions"><a href="#curriculum" class="btn btn-light">📚 Xem toàn bộ bài học</a><a href="#exam" class="btn btn-ghost">⚡ Thi thử ngay</a><button class="btn btn-ghost" onclick="toast('Trợ giảng AI sẽ dựa trên kết quả học tập để đề xuất bài luyện riêng.')">✦ Trợ giảng AI</button></div>
+        <div class="hero-badges"><span>✓ 85 bài học</span><span>✓ 15 chương</span><span>✓ Tự luyện 3 dạng</span><span>✓ Kiểm tra 10 điểm</span></div>
+      </div>
+      <div class="physics-card" aria-hidden="true"><div class="float-chip">PHÒNG HỌC VẬT LÍ SỐ 4.0</div><div class="orbit"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="atom-core"></div><i class="particle p1"></i><i class="particle p2"></i><i class="particle p3"></i><div class="teacher-mini"><div class="avatar">PD</div><div><b>Thầy Phạm Văn Dinh</b><span>Vật lí THPT • Học – Luyện – Kiểm tra – AI</span></div></div></div>
+    </div>
+  </section>
+  <div class="stats"><div class="container"><div class="stats-inner"><div class="stat"><b>85</b><span>Bài học Vật lí 10–11–12</span></div><div class="stat"><b>15</b><span>Chương kiến thức cốt lõi</span></div><div class="stat"><b>3</b><span>Dạng trắc nghiệm chuẩn hóa</span></div><div class="stat"><b>AI</b><span>Phân tích & luyện tập cá nhân hóa</span></div></div></div></div>
 
-    <!-- Main Container -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 py-10 w-full">
+  <section id="programs">
+    <div class="container"><div class="section-head"><div><div class="kicker">CHƯƠNG TRÌNH HỌC</div><h2>Chọn đúng lộ trình của em</h2><p>Ba khối lớp học theo chương – bài; ba tuyến thi thử được thiết kế riêng cho mục tiêu TN THPT, HSA và TSA.</p></div><div class="rightnote">Cấu trúc rõ • Học nhanh • Ôn đúng trọng tâm</div></div>
+    <div class="programs">
+      <a class="program p10" href="#curriculum" data-grade="10"><div class="icon">🔭</div><h3>Vật lí 10</h3><p>7 chương • 34 bài. Từ nhập môn, động học, động lực học đến năng lượng, động lượng và chất lỏng.</p><span class="go">Vào chương trình →</span></a>
+      <a class="program p11" href="#curriculum" data-grade="11"><div class="icon">〰️</div><h3>Vật lí 11</h3><p>4 chương • 26 bài. Dao động, sóng, điện trường, dòng điện và mạch điện.</p><span class="go">Vào chương trình →</span></a>
+      <a class="program p12" href="#curriculum" data-grade="12"><div class="icon">⚛️</div><h3>Vật lí 12</h3><p>4 chương • 25 bài. Vật lí nhiệt, khí lí tưởng, từ trường và vật lí hạt nhân.</p><span class="go">Vào chương trình →</span></a>
+      <a class="program ptn" href="#exam"><div class="icon">🎯</div><h3>Thi thử TN THPT</h3><p>Đề chuẩn cấu trúc, phòng thi tập trung, phân tích kết quả theo chủ đề và mức độ.</p><span class="go">Thi thử →</span></a>
+      <a class="program phsa" href="#exam"><div class="icon">🧠</div><h3>Thi thử HSA</h3><p>Luyện tư duy khoa học, xử lí dữ liệu và vận dụng kiến thức Vật lí trong bối cảnh mới.</p><span class="go">Luyện HSA →</span></a>
+      <a class="program ptsa" href="#exam"><div class="icon">📐</div><h3>Thi thử TSA</h3><p>Luyện tư duy định lượng và giải quyết vấn đề theo định hướng đánh giá tư duy.</p><span class="go">Luyện TSA →</span></a>
+    </div></div>
+  </section>
 
-        <!-- ================= VẬT LÍ 10 ================= -->
-        <div id="lop10" class="tab-content active">
-            <div class="mb-8 bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
-                <div>
-                    <span class="bg-blue-500/30 text-blue-200 text-xs font-bold px-3 py-1 rounded-full border border-blue-400/30">Chương trình chuẩn</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Vật Lí Lớp 10 (Kết Nối Tri Thức)</h2>
-                    <p class="text-blue-100 text-sm mt-1">Hệ thống đầy đủ các chương, bài học và phòng thí nghiệm mô phỏng trực quan.</p>
-                </div>
-                <div class="hidden md:block text-5xl">🔭</div>
-            </div>
-            
-            <div class="space-y-6">
-                <!-- Chương I -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold shadow-inner">📐</div>
-                        <div>
-                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Chương 1</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Mở Đầu - Sai Số & Đo Lường</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition">
-                            <span class="text-xs font-bold text-slate-400">Bài 1</span>
-                            <p class="font-bold text-sm text-slate-800 my-1.5">Làm quen với Vật lí</p>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-200/60 px-2 py-1 rounded-lg w-fit">📖 Lý thuyết cơ bản</span>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition">
-                            <span class="text-xs font-bold text-slate-400">Bài 2</span>
-                            <p class="font-bold text-sm text-slate-800 my-1.5">Các quy tắc an toàn trong phòng thực hành</p>
-                            <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-lg w-fit">⚠️ An toàn thí nghiệm</span>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition">
-                            <span class="text-xs font-bold text-slate-400">Bài 3</span>
-                            <p class="font-bold text-sm text-slate-800 my-1.5">Thực hành tính sai số trong phép đo</p>
-                            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg w-fit">📊 Kỹ năng tính toán</span>
-                        </div>
-                    </div>
-                </div>
+  <section class="section-soft">
+    <div class="container"><div class="section-head"><div><div class="kicker">CHU TRÌNH HỌC</div><h2>Mỗi bài học là một lộ trình hoàn chỉnh</h2><p>Không dừng ở “đọc lý thuyết”. Hệ thống dẫn học sinh từ hiểu kiến thức đến luyện tập, kiểm tra và củng cố đúng điểm yếu.</p></div></div>
+    <div class="flow"><div class="flow-card"><span class="num">01</span><h4>Kiến thức trọng tâm</h4><p>Tóm tắt, hình ảnh, công thức, lỗi thường gặp.</p></div><div class="flow-card"><span class="num">02</span><h4>Video & mô phỏng</h4><p>Thí nghiệm, mô phỏng tương tác và minh họa.</p></div><div class="flow-card"><span class="num">03</span><h4>Tự luyện</h4><p>MCQ, Đúng/Sai và trả lời ngắn.</p></div><div class="flow-card"><span class="num">04</span><h4>AI phân tích</h4><p>Nhận diện kiến thức, kĩ năng còn yếu.</p></div><div class="flow-card"><span class="num">05</span><h4>Kiểm tra sau bài</h4><p>12 MCQ + 3 Đ/S + 6 trả lời ngắn.</p></div><div class="flow-card"><span class="num">06</span><h4>Luyện cá nhân hóa</h4><p>AI sinh bài bổ sung theo hồ sơ năng lực.</p></div></div></div>
+  </section>
 
-                <!-- Chương II -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl font-bold shadow-inner">🚗</div>
-                        <div>
-                            <span class="text-xs font-bold text-cyan-600 uppercase tracking-wider">Chương 2</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Động Học (Chuyển Động & Vận Tốc)</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-cyan-300 transition">
-                            <div>
-                                <span class="text-xs font-bold text-slate-400">Bài 4, 5, 6</span>
-                                <p class="font-bold text-sm text-slate-800 my-1.5">Độ dịch chuyển, Quãng đường, Tốc độ và Vận tốc</p>
-                            </div>
-                            <a href="Mophong_Quang duong_Độ dịch chuyển1.html" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 bg-blue-50 px-3 py-2 rounded-xl border border-blue-200 transition">🧪 Mở mô phỏng tương tác &rarr;</a>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-cyan-300 transition">
-                            <div>
-                                <span class="text-xs font-bold text-slate-400">Bài 7, 8, 9</span>
-                                <p class="font-bold text-sm text-slate-800 my-1.5">Đồ thị độ dịch chuyển - thời gian, Gia tốc</p>
-                            </div>
-                            <span class="mt-3 text-xs font-semibold text-slate-500 bg-slate-200/60 px-2 py-1 rounded-lg w-fit">📖 Đang cập nhật mô phỏng</span>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col justify-between hover:border-cyan-300 transition">
-                            <div>
-                                <span class="text-xs font-bold text-slate-400">Bài 10, 11, 12</span>
-                                <p class="font-bold text-sm text-slate-800 my-1.5">Sự rơi tự do, Chuyển động ném ngang & ném xiên</p>
-                            </div>
-                            <span class="mt-3 text-xs font-semibold text-slate-500 bg-slate-200/60 px-2 py-1 rounded-lg w-fit">📖 Chuyên đề nâng cao</span>
-                        </div>
-                    </div>
-                </div>
+  <section id="curriculum">
+    <div class="container"><div class="section-head"><div><div class="kicker">MỤC LỤC CHÍNH THỨC</div><h2>Lớp → Chương → Bài → Hoạt động học</h2><p>Danh mục dưới đây được thiết kế đầy đủ theo mục lục thầy cung cấp. Có thể tìm kiếm bài học, mở từng chương hoặc xem nhanh cấu trúc của từng bài.</p></div><div class="rightnote">Nhấn vào bài để xem 6 hoạt động học</div></div>
+      <div class="curriculum-wrap">
+        <div class="curriculum-top"><div class="grade-tabs"><button class="active" data-tab="10">Vật lí 10</button><button data-tab="11">Vật lí 11</button><button data-tab="12">Vật lí 12</button></div><div class="curr-tools"><label class="searchbox" aria-label="Tìm bài học">⌕ <input id="lessonSearch" placeholder="Tìm bài: Newton, sóng, từ trường..." /></label><button class="smallbtn" id="expandAll">Mở tất cả</button><button class="smallbtn" id="collapseAll">Thu gọn</button></div></div>
+        <div id="gradeSummary" class="grade-summary"></div>
+        <div id="chapterContainer" class="chapters"></div>
+      </div>
+    </div>
+  </section>
 
-                <!-- Chương III & IV -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold shadow-inner">⚖️</div>
-                        <div>
-                            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Chương 3 & 4</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Động Lực Học & Các Định Luật Newton</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-indigo-600">Chương III (Bài 13 - 18)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Tổng hợp và phân tích lực, Ba định luật Newton, Moment lực</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-indigo-600">Chương IV (Bài 19 - 27)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Năng lượng, Công, Công suất, Động năng, Thế năng, Định luật bảo toàn</p>
-                        </div>
-                    </div>
-                </div>
+  <section id="exam" class="section-soft">
+    <div class="container"><div class="section-head"><div><div class="kicker">KIỂM TRA & ĐÁNH GIÁ</div><h2>Kiểm tra sau mỗi bài – chuẩn hóa 10 điểm</h2><p>Sau phần tự luyện, học sinh làm một bài kiểm tra riêng để xác nhận mức độ nắm chắc kiến thức trước khi chuyển sang bài tiếp theo.</p></div></div>
+    <div class="assessment"><div class="panel"><h3>Cấu trúc kiểm tra sau bài</h3><p>21 câu lớn, đủ ba loại trắc nghiệm; dữ liệu tách biệt với phần tự luyện.</p><div class="exam-part"><div class="exam-icon">I</div><div><b>12 câu trắc nghiệm nhiều lựa chọn</b><small>Kiểm tra nền tảng khái niệm và thông hiểu</small></div><span class="score">4,0 điểm</span></div><div class="exam-part"><div class="exam-icon">II</div><div><b>3 câu trắc nghiệm Đúng/Sai</b><small>Mỗi câu 4 nhận định, tăng chiều sâu đánh giá</small></div><span class="score">3,0 điểm</span></div><div class="exam-part"><div class="exam-icon">III</div><div><b>6 câu trắc nghiệm trả lời ngắn</b><small>Đánh giá vận dụng và xử lí định lượng</small></div><span class="score">3,0 điểm</span></div></div>
+    <div class="panel"><h3>Ma trận mức độ</h3><p>Cấu trúc mặc định được thiết kế đúng tỉ trọng thầy yêu cầu.</p><div class="matrix"><div class="m1"><b>4,0</b><span>Nhận biết</span></div><div class="m2"><b>3,0</b><span>Thông hiểu</span></div><div class="m3"><b>2,0</b><span>Vận dụng</span></div><div class="m4"><b>1,0</b><span>Vận dụng cao</span></div></div><div class="assessment-note">AI có thể đề xuất câu hỏi, nhưng đề kiểm tra chính thức nên đi qua bước kiểm định và duyệt của giáo viên trước khi công bố.</div></div></div>
+    </div>
+  </section>
 
-                <!-- Chương V, VI, VII -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔄</div>
-                        <div>
-                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Chương 5, 6 & 7</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Động Lượng, Chuyển Động Tròn & Biến Dạng</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-emerald-600">Chương V (Bài 28 - 29)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Động lượng và Định luật bảo toàn động lượng</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-emerald-600">Chương VI (Bài 30 - 31)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Chuyển động tròn đều, Lực hướng tâm</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-emerald-600">Chương VII (Bài 32 - 34)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Biến dạng của vật rắn, Áp suất chất lỏng</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <section class="ai-section" id="ai">
+    <div class="container ai-grid"><div><div class="kicker">AI ADAPTIVE LEARNING</div><h2>Mỗi học sinh có một đường luyện tập riêng</h2><p>Kết quả từng câu được gắn với mạch kiến thức, kĩ năng và mức độ. Hệ thống nhận diện phần yếu và dùng AI tạo bài luyện bổ sung thay vì giao cùng một đề cho tất cả.</p><div class="ai-points"><div class="ai-point"><i class="check">✓</i><div><b>Skill Map theo từng học sinh</b><span>Theo dõi tốc độ, đồ thị, xử lí dữ liệu, vận dụng… thay vì chỉ lưu tổng điểm.</span></div></div><div class="ai-point"><i class="check">✓</i><div><b>Ba nguồn tạo câu hỏi</b><span>Giáo viên tự chọn • AI dùng ngân hàng • AI nghiên cứu và sáng tạo câu mới.</span></div></div><div class="ai-point"><i class="check">✓</i><div><b>Kiểm soát chất lượng trước khi phát hành</b><span>Phân loại NB/TH/VD/VDC, kiểm tra đáp án, trùng lặp và ngôn ngữ.</span></div></div></div></div>
+    <div class="ai-dashboard"><div class="dash-head"><div class="dash-student"><div class="avatar">10A1</div><div><b>Hồ sơ năng lực • Học sinh #023</b><small>Cập nhật sau bài “Tốc độ và vận tốc”</small></div></div><span class="ai-status">AI đang phân tích</span></div><div class="skill"><label>Đọc đồ thị x–t</label><div class="bar"><i style="width:44%"></i></div><strong>44%</strong></div><div class="skill"><label>Bảng số liệu</label><div class="bar"><i style="width:52%"></i></div><strong>52%</strong></div><div class="skill"><label>Tốc độ trung bình</label><div class="bar"><i style="width:67%"></i></div><strong>67%</strong></div><div class="skill"><label>Khái niệm tốc độ</label><div class="bar"><i style="width:91%"></i></div><strong>91%</strong></div><div class="recommend"><b>✦ Đề xuất của AI</b><p>Luyện thêm 8 câu: 4 câu đồ thị, 2 câu bảng dữ liệu và 2 câu vận dụng thực tiễn; tập trung mức TH–VD.</p><div class="dash-actions"><button class="make" onclick="toast('Mẫu: AI sẽ sinh bộ câu hỏi riêng dựa trên hồ sơ năng lực.')">Tạo bài luyện riêng</button><button class="view" onclick="toast('Mẫu: mở báo cáo chi tiết theo mạch kiến thức.')">Xem báo cáo</button></div></div></div></div>
+  </section>
 
-        <!-- ================= VẬT LÍ 11 ================= -->
-        <div id="lop11" class="tab-content">
-            <div class="mb-8 bg-gradient-to-r from-indigo-900 to-purple-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
-                <div>
-                    <span class="bg-indigo-500/30 text-indigo-200 text-xs font-bold px-3 py-1 rounded-full border border-indigo-400/30">Chương trình chuẩn</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Vật Lí Lớp 11 (Kết Nối Tri Thức)</h2>
-                    <p class="text-indigo-100 text-sm mt-1">Khảo sát dao động, sóng, điện trường và dòng điện không đổi.</p>
-                </div>
-                <div class="hidden md:block text-5xl">⚡</div>
-            </div>
-            
-            <div class="space-y-6">
-                <!-- Chương I -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl font-bold shadow-inner">〰️</div>
-                        <div>
-                            <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Chương 1</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Dao Động Cơ (Con Lắc Lò Xo & Con Lắc Đơn)</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-purple-600">Bài 1 - 4</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Mô tả dao động điều hoà, Vận tốc - Gia tốc, Động năng - Thế năng</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-purple-600">Bài 5 - 7</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Dao động tắt dần, Dao động cưỡng bức và hiện tượng cộng hưởng</p>
-                        </div>
-                    </div>
-                </div>
+  <section id="admin">
+    <div class="container"><div class="section-head"><div><div class="kicker">DÀNH CHO GIÁO VIÊN</div><h2>Admin: tài liệu nguồn → ngân hàng câu hỏi → AI</h2><p>Không gian riêng để thầy quản trị nội dung, tải Word, tách câu hỏi, chuẩn hóa mức độ và kiểm định trước khi đưa cho học sinh.</p></div></div>
+    <div class="admin-grid"><div class="panel"><h3>Không gian quản trị</h3><p>Mỗi chức năng là một module độc lập, sẵn sàng nối backend sau khi chốt giao diện.</p><div class="admin-menu"><div class="admin-item"><i>📘</i><div><b>Nội dung học</b><small>Khối • Chương • Bài</small></div></div><div class="admin-item"><i>🗂️</i><div><b>Thư viện nguồn</b><small>Word • PDF • ảnh • video</small></div></div><div class="admin-item"><i>❓</i><div><b>Ngân hàng câu hỏi</b><small>Metadata • nguồn • phiên bản</small></div></div><div class="admin-item"><i>✦</i><div><b>AI Studio</b><small>Tách • chuẩn hóa • sinh câu</small></div></div><div class="admin-item"><i>✓</i><div><b>Kiểm định đề</b><small>Đáp án • trùng lặp • mức độ</small></div></div><div class="admin-item"><i>📊</i><div><b>Thống kê năng lực</b><small>Học sinh • lớp • chủ đề</small></div></div></div></div>
+    <div class="import-box"><h3 style="margin:0 0 7px">Import Word thông minh</h3><p style="margin:0 0 16px;color:var(--muted);font-size:12px">Giáo viên có thể dùng file mẫu để chuẩn hóa tương đối trước khi tải lên, sau đó hệ thống kiểm tra và AI hỗ trợ phần còn thiếu.</p><div class="drop"><b>⬆ Kéo file Word vào đây</b><span>.docx • giữ nguyên file gốc • tạo bản chuẩn hóa riêng</span><div style="margin-top:11px"><button class="smallbtn" onclick="toast('Đặt file mẫu cùng thư mục website hoặc liên kết đến kho tài liệu của thầy.')">Tải file Word mẫu</button> <button class="smallbtn" onclick="toast('Quy chuẩn: Câu x. [NB/TH/VD/VDC], A–D, Đáp án, Lời giải…')">Xem quy tắc</button></div></div><div class="health"><div class="ok"><b>126</b><span>Nhận dạng tốt</span></div><div class="warn"><b>28</b><span>Chưa gắn mức độ</span></div><div class="bad"><b>3</b><span>Cần kiểm tra</span></div></div></div></div>
+    </div>
+  </section>
+</main>
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="brand" style="color:#fff"><div class="brandmark"><span>V</span></div><div class="brandtext"><b style="color:#fff">VẬT LÝ THPT</b><small>Thầy Phạm Văn Dinh</small></div></div><p>Học Vật lí theo cấu trúc rõ ràng, phát triển năng lực và cá nhân hóa lộ trình luyện tập cho từng học sinh.</p></div><div class="footer-col"><h4>CHƯƠNG TRÌNH</h4><a href="#curriculum" data-grade="10">Vật lí 10</a><a href="#curriculum" data-grade="11">Vật lí 11</a><a href="#curriculum" data-grade="12">Vật lí 12</a></div><div class="footer-col"><h4>LUYỆN THI</h4><a href="#exam">TN THPT</a><a href="#exam">HSA</a><a href="#exam">TSA</a></div><div class="footer-col"><h4>HỆ THỐNG</h4><a href="#ai">Trợ giảng AI</a><a href="#admin">Giáo viên/Admin</a></div></div><div class="footer-bottom"><span>© 2026 Vật Lý THPT • vatlythpt.com</span><span>Nội dung học tập: Vật lí THPT • Thầy Phạm Văn Dinh</span></div></div></footer>
 
-                <!-- Chương II -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold shadow-inner">🌊</div>
-                        <div>
-                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Chương 2</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Sóng Cơ & Giao Thoa Sóng</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-blue-600">Bài 8 - 11</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Sóng cơ và sự truyền sóng, Sóng ngang, sóng dọc, Sự phản xạ sóng</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-blue-600">Bài 12 - 15</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Giao thoa sóng, Sóng dừng và các đặc trưng cơ bản</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chương III & IV -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔌</div>
-                        <div>
-                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Chương 3 & 4</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Điện Trường & Dòng Điện Không Đổi</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-amber-600">Chương III (Bài 16 - 21)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Lực tương tác điện, Điện trường đều, Điện thế, Tụ điện</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-amber-600">Chương IV (Bài 22 - 26)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Cường độ dòng điện, Định luật Ohm, Nguồn điện, Công suất</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= VẬT LÍ 12 ================= -->
-        <div id="lop12" class="tab-content">
-            <div class="mb-8 bg-gradient-to-r from-emerald-900 to-teal-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
-                <div>
-                    <span class="bg-emerald-500/30 text-emerald-200 text-xs font-bold px-3 py-1 rounded-full border border-emerald-400/30">Chương trình chuẩn</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Vật Lí Lớp 12 (Kết Nối Tri Thức)</h2>
-                    <p class="text-emerald-100 text-sm mt-1">Nhiệt học, Khí lí tưởng, Từ trường, Điện xoay chiều và Vật lí hạt nhân.</p>
-                </div>
-                <div class="hidden md:block text-5xl">⚛️</div>
-            </div>
-            
-            <div class="space-y-6">
-                <!-- Chương I -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl font-bold shadow-inner">🔥</div>
-                        <div>
-                            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">Chương 1</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Vật Lí Nhiệt & Nhiệt Động Lực Học</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-orange-600">Bài 1 - 4</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Sự chuyển thể, Thang nhiệt độ, Nội năng, Định luật I nhiệt động lực học</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-orange-600">Bài 5 - 7</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Nhiệt dung riêng, Nhiệt hoá hơi riêng, Nhiệt nóng chảy riêng</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chương II -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl font-bold shadow-inner">🎈</div>
-                        <div>
-                            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chương 2</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Khí Lí Tưởng</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-teal-600">Bài 8 - 10</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Mô hình động học phân tử chất khí, Định luật Boyle, Định luật Charles</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-teal-600">Bài 11 - 13</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Phương trình trạng thái khí lí tưởng, Áp suất chất khí</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chương III & IV -->
-                <div class="chapter-card bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center gap-4 mb-5 pb-4 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl font-bold shadow-inner">🧲</div>
-                        <div>
-                            <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">Chương 3 & 4</span>
-                            <h3 class="text-xl font-extrabold text-slate-900">Từ Trường & Vật Lí Hạt Nhân</h3>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-rose-600">Chương III (Bài 14 - 20)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Cảm ứng từ, Từ thông, Dòng điện cảm ứng, Máy phát điện xoay chiều</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-xs font-bold text-rose-600">Chương IV (Bài 21 - 25)</span>
-                            <p class="font-bold text-sm text-slate-800 mt-1">Cấu trúc hạt nhân, Phản ứng hạt nhân, Năng lượng liên kết, Phóng xạ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= ÔN THI TỐT NGHIỆP ================= -->
-        <div id="thpt" class="tab-content">
-            <div class="mb-8 bg-gradient-to-r from-amber-800 to-orange-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
-                <div>
-                    <span class="bg-amber-500/30 text-amber-200 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/30">Hệ thống luyện thi</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Ôn Thi Tốt Nghiệp THPT Môn Vật Lí</h2>
-                    <p class="text-amber-100 text-sm mt-1">Tổng hợp đề thi thử bám sát ma trận cấu trúc của Bộ GD&ĐT.</p>
-                </div>
-                <div class="hidden md:block text-5xl">🏆</div>
-            </div>
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-                <h3 class="font-extrabold text-xl text-slate-900 mb-3">📌 Kho Đề Thi Thử & Chuyên Đề Vận Dụng Cao</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Hệ thống các bộ đề thi thử độc quyền từ các trường chuyên trên toàn quốc, kèm video giải chi tiết các câu hỏi mức độ Vận dụng - Vận dụng cao (8, 9, 10 điểm).</p>
-            </div>
-        </div>
-
-        <!-- ================= LUYỆN THI HSA ================= -->
-        <div id="hsa" class="tab-content">
-            <div class="mb-8 bg-gradient-to-r from-purple-800 to-indigo-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
-                <div>
-                    <span class="bg-purple-500/30 text-purple-200 text-xs font-bold px-3 py-1 rounded-full border border-purple-400/30">Đánh Giá Năng Lực ĐHQGHN</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Luyện Thi HSA - Phần Tư Duy Khoa Học</h2>
-                    <p class="text-purple-100 text-sm mt-1">Rèn luyện kỹ năng phân tích biểu đồ, xử lý số liệu thí nghiệm thực tế.</p>
-                </div>
-                <div class="hidden md:block text-5xl">🧠</div>
-            </div>
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-                <h3 class="font-extrabold text-xl text-slate-900 mb-3">🎯 Ngân Hàng Câu Hỏi & Đề Thi Thử HSA</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Chuyên đề bám sát định dạng đề thi Đánh giá năng lực của Đại học Quốc gia Hà Nội, chú trọng vào tư duy logic, đọc hiểu bảng số liệu vật lý.</p>
-            </div>
-        </div>
-
-        <!-- ================= LUYỆN THI TSA ================= -->
-        <div id="tsa" class="tab-content">
-            <div class="mb-8 bg-gradient-to-r from-rose-800 to-red-900 text-white p-6 rounded-3xl shadow-lg flex items-center justify-between">
-                <div>
-                    <span class="bg-rose-500/30 text-rose-200 text-xs font-bold px-3 py-1 rounded-full border border-rose-400/30">Đánh Giá Tư Duy ĐHBKHN</span>
-                    <h2 class="text-2xl md:text-3xl font-extrabold mt-2">Luyện Thi TSA - Tư Duy Khoa Học Tự Nhiên</h2>
-                    <p class="text-rose-100 text-sm mt-1">Chinh phục phần thi Khoa học ứng dụng phục vụ xét tuyển Bách Khoa.</p>
-                </div>
-                <div class="hidden md:block text-5xl">🚀</div>
-            </div>
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-                <h3 class="font-extrabold text-xl text-slate-900 mb-3">⚙️ Chuyên Đề Tư Duy Khoa Học Chuyên Sâu</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Hệ thống bài tập tư duy định lượng, phân tích hiện tượng vật lý nâng cao đáp ứng kỳ thi Đánh giá tư duy của ĐH Bách Khoa Hà Nội.</p>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 text-center py-10 text-sm border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="font-extrabold text-white text-base">CỔNG THÔNG TIN THÍ NGHIỆM ẢO & LUYỆN THI VẬT LÍ</p>
-            <p class="text-xs text-blue-400 mt-1 font-semibold">Thầy Phạm Văn Dinh • Trường THPT B Nguyễn Huệ, Ninh Bình</p>
-            <p class="mt-4 text-xs text-slate-500">© 2026 vatlythpt.com. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript chuyển Tab -->
-    <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = "tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition text-slate-600 hover:bg-slate-100";
-            });
-            document.getElementById(tabId).classList.add('active');
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.className = "tab-btn px-5 py-2.5 rounded-2xl text-sm font-bold transition bg-blue-600 text-white shadow-lg shadow-blue-600/25";
-            window.scrollTo({ top: 300, behavior: 'smooth' });
-        }
-    </script>
+<div class="drawer" id="drawer"><div class="drawer-panel"><div class="drawer-top"><div class="brand"><div class="brandmark"><span>V</span></div><div class="brandtext"><b>VẬT LÝ THPT</b><small>Thầy Phạm Văn Dinh</small></div></div><button class="close" id="closeDrawer">×</button></div><div class="drawer-nav"><a href="#home">Trang chủ</a><a href="#curriculum" data-grade="10">Vật lí 10</a><a href="#curriculum" data-grade="11">Vật lí 11</a><a href="#curriculum" data-grade="12">Vật lí 12</a><a href="#exam">Thi thử TN THPT</a><a href="#exam">Thi thử HSA</a><a href="#exam">Thi thử TSA</a><a href="#admin">Giáo viên/Admin</a></div></div></div>
+<div class="toast" id="toast"></div><button class="backtop" id="backtop" aria-label="Lên đầu trang">↑</button>
+<script>
+const curriculum = {
+  10: {
+    title:'VẬT LÍ 10', subtitle:'7 chương • 34 bài • theo mục lục thầy cung cấp',
+    extrasTop:['Hướng dẫn sử dụng sách','Lời nói đầu','Bảng đơn vị đo lường Hệ SI'],
+    extrasBottom:['Giải thích một số thuật ngữ dùng trong sách'],
+    chapters:[
+      {name:'MỞ ĐẦU', lessons:['Làm quen với Vật lí','Các quy tắc an toàn trong phòng thực hành Vật lí','Thực hành: Tính sai số trong phép đo. Ghi kết quả đo']},
+      {name:'ĐỘNG HỌC', lessons:['Độ dịch chuyển và quãng đường đi được','Tốc độ và vận tốc','Thực hành: Đo tốc độ của vật chuyển động','Đồ thị độ dịch chuyển – thời gian','Chuyển động biến đổi. Gia tốc','Chuyển động thẳng biến đổi đều','Sự rơi tự do','Thực hành: Đo gia tốc rơi tự do','Chuyển động ném']},
+      {name:'ĐỘNG LỰC HỌC', lessons:['Tổng hợp và phân tích lực. Cân bằng lực','Định luật 1 Newton','Định luật 2 Newton','Định luật 3 Newton','Trọng lực và lực căng','Lực ma sát','Lực cản và lực nâng','Một số ví dụ về cách giải các bài toán thuộc phần động lực học','Moment lực. Cân bằng của vật rắn','Thực hành: Tổng hợp lực']},
+      {name:'NĂNG LƯỢNG, CÔNG, CÔNG SUẤT', lessons:['Năng lượng. Công cơ học','Công suất','Động năng, thế năng','Cơ năng và định luật bảo toàn cơ năng','Hiệu suất']},
+      {name:'ĐỘNG LƯỢNG', lessons:['Động lượng','Định luật bảo toàn động lượng','Thực hành: Xác định động lượng của vật trước và sau va chạm']},
+      {name:'CHUYỂN ĐỘNG TRÒN', lessons:['Động học của chuyển động tròn đều','Lực hướng tâm và gia tốc hướng tâm']},
+      {name:'BIẾN DẠNG CỦA VẬT RẮN. ÁP SUẤT CHẤT LỎNG', lessons:['Biến dạng của vật rắn','Khối lượng riêng. Áp suất chất lỏng']}
+    ]
+  },
+  11: {
+    title:'VẬT LÍ 11', subtitle:'4 chương • 26 bài • theo mục lục thầy cung cấp', extrasTop:['Lời nói đầu'], extrasBottom:[],
+    chapters:[
+      {name:'DAO ĐỘNG', lessons:['Dao động điều hòa','Mô tả dao động điều hòa','Vận tốc, gia tốc trong dao động điều hòa','Bài tập về dao động điều hòa','Động năng. Thế năng. Sự chuyển hóa năng lượng trong dao động điều hòa','Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng','Bài tập về sự chuyển hóa năng lượng trong dao động điều hòa']},
+      {name:'SÓNG', lessons:['Mô tả sóng','Sóng ngang. Sóng dọc. Sự truyền năng lượng của sóng cơ','Thực hành: Đo tần số của sóng âm','Sóng điện từ','Giao thoa sóng','Sóng dừng','Bài tập về sóng','Thực hành: Đo tốc độ truyền âm']},
+      {name:'ĐIỆN TRƯỜNG', lessons:['Lực tương tác giữa hai điện tích','Khái niệm điện trường','Điện trường đều','Thế năng điện','Điện thế','Tụ điện']},
+      {name:'DÒNG ĐIỆN. MẠCH ĐIỆN', lessons:['Cường độ dòng điện','Điện trở. Định luật Ohm','Nguồn điện','Năng lượng và công suất điện','Thực hành: Đo suất điện động và điện trở trong của pin điện hóa']}
+    ]
+  },
+  12: {
+    title:'VẬT LÍ 12', subtitle:'4 chương • 25 bài • theo mục lục thầy cung cấp', extrasTop:['Hướng dẫn sử dụng sách','Lời nói đầu'], extrasBottom:['Giải thích một số thuật ngữ dùng trong sách'],
+    chapters:[
+      {name:'VẬT LÍ NHIỆT', lessons:['Cấu trúc của chất. Sự chuyển thể','Nội năng. Định luật I của nhiệt động lực học','Nhiệt độ. Thang nhiệt độ – nhiệt kế','Nhiệt dung riêng','Nhiệt nóng chảy riêng','Nhiệt hóa hơi riêng','Bài tập về vật lí nhiệt']},
+      {name:'KHÍ LÍ TƯỞNG', lessons:['Mô hình động học phân tử chất khí','Định luật Boyle','Định luật Charles','Phương trình trạng thái của khí lí tưởng','Áp suất khí theo mô hình động học phân tử. Quan hệ giữa động năng phân tử và nhiệt độ','Bài tập về khí lí tưởng']},
+      {name:'TỪ TRƯỜNG', lessons:['Từ trường','Lực từ tác dụng lên dây dẫn mang dòng điện. Cảm ứng từ','Từ thông. Hiện tượng cảm ứng điện từ','Máy phát điện xoay chiều','Ứng dụng hiện tượng cảm ứng điện từ','Điện từ trường. Mô hình sóng điện từ','Bài tập về từ trường']},
+      {name:'VẬT LÍ HẠT NHÂN', lessons:['Cấu trúc hạt nhân','Phản ứng hạt nhân và năng lượng liên kết','Hiện tượng phóng xạ','Công nghiệp hạt nhân','Bài tập về vật lí hạt nhân']}
+    ]
+  }
+};
+let activeGrade='10';
+const chapterContainer=document.getElementById('chapterContainer');
+const gradeSummary=document.getElementById('gradeSummary');
+const search=document.getElementById('lessonSearch');
+function roman(n){return ['I','II','III','IV','V','VI','VII','VIII'][n-1]||n}
+function classify(title){const t=title.toLowerCase(); if(t.includes('thực hành')) return '<span class="tag practice">THỰC HÀNH</span>'; if(t.includes('bài tập')) return '<span class="tag exercise">BÀI TẬP</span>'; return '<span class="tag">BÀI HỌC</span>'}
+function modules(){return `<div class="lesson-modules"><button class="module" onclick="moduleToast('Kiến thức trọng tâm')">1. Kiến thức</button><button class="module" onclick="moduleToast('Video & mô phỏng')">2. Video/Mô phỏng</button><button class="module" onclick="moduleToast('Tự luyện 3 dạng trắc nghiệm')">3. Tự luyện</button><button class="module" onclick="moduleToast('Kiểm tra sau bài')">4. Kiểm tra</button><button class="module ai" onclick="moduleToast('AI luyện thêm cá nhân hóa')">5. AI luyện thêm</button><button class="module" onclick="moduleToast('Xuất phiếu PDF có watermark')">6. Tải PDF</button></div>`}
+function renderCurriculum(){
+  const g=curriculum[activeGrade], q=search.value.trim().toLowerCase(); let lessonNo=0, visible=0;
+  gradeSummary.innerHTML=`<div><h3>${g.title}</h3><p>${g.subtitle}</p></div><div class="summary-badges"><span>${g.chapters.length} chương</span><span>${g.chapters.reduce((s,c)=>s+c.lessons.length,0)} bài</span><span>6 hoạt động / bài</span></div>`;
+  let html='';
+  if(!q && g.extrasTop.length) html+=`<div class="chapter open"><button class="chapter-head"><span class="chap-index">•</span><span><b>PHẦN MỞ ĐẦU & HƯỚNG DẪN</b><small>Tài liệu chung của khối lớp</small></span><span class="chap-count">${g.extrasTop.length} mục</span><span class="chev">⌃</span></button><div class="lesson-list">${g.extrasTop.map(x=>`<div class="extra-item">${x}</div>`).join('')}</div></div>`;
+  g.chapters.forEach((ch,ci)=>{
+    let rows=''; const startNo=lessonNo+1;
+    ch.lessons.forEach(title=>{lessonNo++; const match=!q || title.toLowerCase().includes(q) || ch.name.toLowerCase().includes(q); if(!match) return; visible++; rows+=`<div class="lesson"><div class="lesson-main" tabindex="0" role="button" aria-expanded="false"><span class="lesson-no">${lessonNo}</span><div><div class="lesson-title">Bài ${lessonNo}. ${title}</div><div class="lesson-meta">${classify(title)}<span class="tag">NB • TH • VD • VDC</span></div></div><span class="lesson-open">Xem cấu trúc ↓</span></div><div class="lesson-detail">${modules()}</div></div>`});
+    if(rows) html+=`<div class="chapter ${q?'open':''}"><button class="chapter-head" aria-expanded="${q?'true':'false'}"><span class="chap-index">${roman(ci+1)}</span><span><b>CHƯƠNG ${roman(ci+1)}. ${ch.name}</b><small>Bài ${startNo}–${lessonNo}</small></span><span class="chap-count">${ch.lessons.length} bài</span><span class="chev">⌄</span></button><div class="lesson-list">${rows}</div></div>`;
+  });
+  if(!q && g.extrasBottom.length) html+=`<div class="chapter"><button class="chapter-head"><span class="chap-index">•</span><span><b>PHỤ LỤC</b><small>Tài liệu cuối sách</small></span><span class="chap-count">${g.extrasBottom.length} mục</span><span class="chev">⌄</span></button><div class="lesson-list">${g.extrasBottom.map(x=>`<div class="extra-item">${x}</div>`).join('')}</div></div>`;
+  if(q && visible===0) html='<div class="no-result">Không tìm thấy bài học phù hợp. Hãy thử từ khóa khác.</div>';
+  chapterContainer.innerHTML=html; bindAccordion();
+}
+function bindAccordion(){document.querySelectorAll('.chapter-head').forEach(btn=>btn.addEventListener('click',()=>{const c=btn.closest('.chapter');c.classList.toggle('open');btn.setAttribute('aria-expanded',c.classList.contains('open'))}));document.querySelectorAll('.lesson-main').forEach(el=>{const toggle=()=>{const l=el.closest('.lesson');l.classList.toggle('expanded');el.setAttribute('aria-expanded',l.classList.contains('expanded'))};el.addEventListener('click',toggle);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}})})}
+function setGrade(g){activeGrade=String(g);document.querySelectorAll('.grade-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===activeGrade));search.value='';renderCurriculum()}
+document.querySelectorAll('[data-grade]').forEach(a=>a.addEventListener('click',()=>setGrade(a.dataset.grade)));
+document.querySelectorAll('.grade-tabs button').forEach(b=>b.addEventListener('click',()=>setGrade(b.dataset.tab)));
+search.addEventListener('input',renderCurriculum);
+document.getElementById('expandAll').onclick=()=>document.querySelectorAll('.chapter').forEach(c=>{c.classList.add('open');c.querySelector('.chapter-head')?.setAttribute('aria-expanded','true')});
+document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('.chapter').forEach(c=>{c.classList.remove('open');c.querySelector('.chapter-head')?.setAttribute('aria-expanded','false')});
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove('show'),2600)}
+function moduleToast(name){toast(name+' – module mẫu đã sẵn sàng để nối nội dung thật.')}
+const drawer=document.getElementById('drawer');document.getElementById('menuBtn').onclick=()=>drawer.classList.add('open');document.getElementById('closeDrawer').onclick=()=>drawer.classList.remove('open');drawer.addEventListener('click',e=>{if(e.target===drawer)drawer.classList.remove('open')});document.querySelectorAll('.drawer-nav a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+const backtop=document.getElementById('backtop');window.addEventListener('scroll',()=>backtop.classList.toggle('show',scrollY>700));backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+renderCurriculum();
+</script>
 </body>
 </html>
