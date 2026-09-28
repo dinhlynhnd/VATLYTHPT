@@ -1,9 +1,9 @@
 {
   "name": "vatlythpt-github-vercel",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "engines": {
-    "node": ">=20"
+    "node": "20.x"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.104.1"

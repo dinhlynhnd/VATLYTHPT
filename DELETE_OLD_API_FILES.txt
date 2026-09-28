@@ -1,0 +1,20 @@
+XÓA TẤT CẢ file JS cũ trong thư mục api/ trước khi upload api/index.js mới:
+auth-login.js
+auth-logout.js
+complete-upload.js
+create-upload.js
+health.js
+job.js
+lesson.js
+lessons.js
+processor-claim.js
+processor-complete.js
+processor-fail.js
+processor-heartbeat.js
+processor-progress.js
+processor-result-upload.js
+publish.js
+review-resolve.js
+review.js
+
+Sau khi xóa, thư mục api/ chỉ còn: index.js
