@@ -1,0 +1,1 @@
+const {json,allowMethod}=require('../lib/server');module.exports=async(req,res)=>{if(!allowMethod(req,res,['POST']))return;res.setHeader('Set-Cookie','vatly_admin=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');return json(res,200,{ok:true})};
