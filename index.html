@@ -154,7 +154,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 <div class="modal" id="genericModal"><div class="modal-card" id="genericCard"></div></div>
 
 <!-- ADMIN -->
-<div id="adminApp"><div class="admin-shell"><aside class="admin-side" id="adminSide"><div class="admin-brand"><div class="mark" style="width:39px;height:39px">V</div><div><b>VATLYTHPT ADMIN</b><small id="adminSideTeacher">Thầy Phạm Văn Dinh</small></div></div><div class="admin-nav"><button class="active" data-view="dashboard"><span>▦</span>Tổng quan</button><button data-view="content"><span>📘</span>Nội dung học</button><button data-view="classes"><span>👥</span>Lớp & tài khoản</button><button data-view="sources"><span>🗂</span>Nhật ký xuất bản</button><button data-view="questions"><span>❓</span>Ngân hàng câu hỏi</button><button data-view="ai"><span>✦</span>AI Studio</button><button data-view="settings"><span>⚙</span>Cài đặt</button></div><div class="admin-foot">ONE-CLICK V5 • LMS + AI<br>Nội dung qua GitHub • Dữ liệu học tập qua Supabase.</div></aside><main class="admin-main"><div class="admin-top"><div style="display:flex;align-items:center;gap:9px"><button class="mini" onclick="document.getElementById('adminSide').classList.toggle('mobile-open')">☰</button><h2 id="adminPageTitle">Tổng quan</h2></div><div class="admin-user"><div id="adminTopAvatar" class="avatar" style="width:38px;height:38px">AD</div><div><b id="adminTopName">Thầy Dinh</b><small>Administrator</small></div><button class="mini red" onclick="logoutAdmin()">Đăng xuất</button></div></div><div class="admin-content" id="adminContent"></div></main></div></div>
+<div id="adminApp"><div class="admin-shell"><aside class="admin-side" id="adminSide"><div class="admin-brand"><div class="mark" style="width:39px;height:39px">V</div><div><b>VATLYTHPT ADMIN</b><small id="adminSideTeacher">Thầy Phạm Văn Dinh</small></div></div><div class="admin-nav"><button class="active" data-view="dashboard"><span>▦</span>Tổng quan</button><button data-view="content"><span>📘</span>Nội dung học</button><button data-view="classes"><span>👥</span>Lớp & tài khoản</button><button data-view="sources"><span>🗂</span>Nhật ký xuất bản</button><button data-view="questions"><span>❓</span>Ngân hàng câu hỏi</button><button data-view="ai"><span>✦</span>AI Studio</button><button data-view="settings"><span>⚙</span>Cài đặt</button></div><div class="admin-foot">ONE-CLICK V5.1 • LMS + AI<br>Nội dung qua GitHub • Dữ liệu học tập qua Supabase.</div></aside><main class="admin-main"><div class="admin-top"><div style="display:flex;align-items:center;gap:9px"><button class="mini" onclick="document.getElementById('adminSide').classList.toggle('mobile-open')">☰</button><h2 id="adminPageTitle">Tổng quan</h2></div><div class="admin-user"><div id="adminTopAvatar" class="avatar" style="width:38px;height:38px">AD</div><div><b id="adminTopName">Thầy Dinh</b><small>Administrator</small></div><button class="mini red" onclick="logoutAdmin()">Đăng xuất</button></div></div><div class="admin-content" id="adminContent"></div></main></div></div>
 
 <!-- STUDENT -->
 <div class="student-dashboard" id="studentApp"><div class="student-head"><div class="container" style="display:flex;justify-content:space-between;align-items:center"><div class="brand"><div id="studentHeaderAvatar" class="mark" style="width:40px;height:40px">V</div><div class="brandtext"><b style="color:#fff">VẬT LÝ THPT</b><small id="studentHeaderInfo" style="color:#a9bfd9"></small></div></div><div class="toolbar"><button class="mini" onclick="openStudentProfile()">Cài đặt cá nhân</button><button class="mini" onclick="openStudentChangePassword()">Đổi mật khẩu</button><button class="mini red" onclick="logoutStudent()">Đăng xuất</button></div></div></div><div class="container student-main" id="studentMain"></div></div>
@@ -429,5 +429,157 @@ function openPublicLesson(id,title,g='',c='',n=''){const m=manifestLesson(id);if
 async function initSite(){await loadContentManifest();renderCurriculum();refreshTeacherUI();updatePublicAuthUI();showExamTrack('tn',false);updateSessionBadge()}
 initSite();
 (function restoreSession(){updatePublicAuthUI();const params=new URLSearchParams(location.search),forceAdmin=params.get('admin')==='1'||location.hash==='#admin-login',a=readAuth(),s=state();if(forceAdmin){if(a?.type==='admin')setTimeout(()=>showAdmin(a.view||'dashboard'),80);else setTimeout(()=>openLogin('admin'),120);return}if(a?.type==='admin'){setTimeout(()=>showAdmin(a.view||'dashboard'),80);return}if(a?.type==='student'){const st=s.students.find(x=>x.id===a.id);if(st){currentStudent=st;currentUser={type:'student',id:st.id};setTimeout(()=>st.mustChange?openMandatoryChange():showStudent(),80);return}else saveAuth(null)}})();;
+</script>
+<script id="vatlythpt-live-lms-v51">
+/* VATLYTHPT V5.1 LIVE LMS — Supabase Auth + Edge Functions.
+   Giữ nguyên giao diện V5, chỉ thay lớp đăng nhập học sinh/LMS bằng Supabase thật. */
+(function(){
+  const CFG = window.VATLYTHPT_CONFIG || {};
+  const SKEY = 'vatlythpt_supabase_session_v51';
+  const PLACEHOLDER = 'PASTE_SUPABASE_PUBLISHABLE_KEY_HERE';
+  const legacyDoLogin = window.doLogin;
+  const legacyUpdatePublicAuthUI = window.updatePublicAuthUI;
+  const legacyShowStudent = window.showStudent;
+  const legacyLogoutStudent = window.logoutStudent;
+  const legacySubmitPasswordChange = window.submitPasswordChange;
+  const legacyOpenStudentProfile = window.openStudentProfile;
+
+  function liveConfigured(){
+    const k=String(CFG.supabasePublishableKey||'').trim();
+    return !!(CFG.supabaseUrl && k && k!==PLACEHOLDER && !k.includes('PASTE_'));
+  }
+  function base(){ return String(CFG.supabaseUrl||'').replace(/\/$/,''); }
+  function apiHeaders(token){
+    const h={'apikey':CFG.supabasePublishableKey,'Content-Type':'application/json'};
+    if(token) h['Authorization']='Bearer '+token;
+    return h;
+  }
+  function readSupa(){ try{return JSON.parse(localStorage.getItem(SKEY)||'null')}catch(e){return null} }
+  function writeSupa(s){ if(s)localStorage.setItem(SKEY,JSON.stringify(s)); else localStorage.removeItem(SKEY); }
+  function tokenExpired(s){ return !s?.access_token || (s.expires_at && Date.now()>Number(s.expires_at)*1000-60000); }
+  function studentFromUser(user){
+    const m=user?.user_metadata||{}, email=user?.email||'';
+    return {
+      id:user?.id||'',
+      name:m.full_name||m.name||m.display_name||email.split('@')[0]||'Học sinh',
+      username:email,
+      email,
+      className:m.class_name||m.className||'',
+      grade:Number(m.grade||10)||10,
+      avatar:m.avatar_url||m.avatar||'',
+      dob:m.dob||'',
+      authProvider:'supabase',
+      mustChange:false,
+      status:'active'
+    };
+  }
+  async function authPassword(email,password){
+    const r=await fetch(base()+'/auth/v1/token?grant_type=password',{method:'POST',headers:apiHeaders(),body:JSON.stringify({email,password})});
+    const d=await r.json().catch(()=>({}));
+    if(!r.ok) throw new Error(d.error_description||d.msg||d.message||'Đăng nhập Supabase thất bại.');
+    d.expires_at=Math.floor(Date.now()/1000)+Number(d.expires_in||3600);
+    writeSupa(d); sessionStorage.setItem('vatlythpt_supabase_access_token',d.access_token||'');
+    return d;
+  }
+  async function refreshSession(){
+    const s=readSupa(); if(!s?.refresh_token) return null;
+    const r=await fetch(base()+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:apiHeaders(),body:JSON.stringify({refresh_token:s.refresh_token})});
+    const d=await r.json().catch(()=>({}));
+    if(!r.ok){ writeSupa(null); sessionStorage.removeItem('vatlythpt_supabase_access_token'); return null; }
+    d.expires_at=Math.floor(Date.now()/1000)+Number(d.expires_in||3600);
+    writeSupa(d); sessionStorage.setItem('vatlythpt_supabase_access_token',d.access_token||''); return d;
+  }
+  async function activeSession(){
+    let s=readSupa(); if(!s)return null; if(tokenExpired(s))s=await refreshSession();
+    if(s?.access_token) sessionStorage.setItem('vatlythpt_supabase_access_token',s.access_token); return s;
+  }
+  async function signOutLive(){
+    const s=readSupa();
+    if(s?.access_token){ try{await fetch(base()+'/auth/v1/logout',{method:'POST',headers:apiHeaders(s.access_token)})}catch(e){} }
+    writeSupa(null); sessionStorage.removeItem('vatlythpt_supabase_access_token');
+  }
+
+  window.lmsConfigured = liveConfigured;
+  window.lmsAuthToken = function(){ return readSupa()?.access_token || sessionStorage.getItem('vatlythpt_supabase_access_token') || ''; };
+  window.lmsCall = async function(functionName,payload){
+    if(!liveConfigured()) throw new Error('Chưa nhập Supabase Publishable Key trong config/site-config.js.');
+    let s=await activeSession(); if(!s?.access_token) throw new Error('Phiên học sinh chưa đăng nhập.');
+    const call=async()=>{const r=await fetch(base()+'/functions/v1/'+functionName,{method:'POST',headers:apiHeaders(s.access_token),body:JSON.stringify(payload||{})});let d={};try{d=await r.json()}catch(e){}return {r,d}};
+    let {r,d}=await call();
+    if(r.status===401 && s.refresh_token){s=await refreshSession();if(s?.access_token)({r,d}=await call())}
+    if(!r.ok) throw new Error(d.error||d.message||('LMS HTTP '+r.status)); return d;
+  };
+
+  window.doLogin = async function(){
+    const u=document.getElementById('loginUser').value.trim(), p=document.getElementById('loginPass').value, err=document.getElementById('loginError');
+    err.textContent=''; if(!u||!p){err.textContent='Vui lòng nhập đủ tài khoản và mật khẩu.';return}
+    if(window.loginMode==='admin' || (typeof loginMode!=='undefined' && loginMode==='admin')) return legacyDoLogin();
+    if(liveConfigured() && u.includes('@')){
+      try{
+        const s=await authPassword(u,p), st=studentFromUser(s.user); window.currentStudent=st; window.currentUser={type:'student-supabase',id:st.id};
+        currentStudent=st; currentUser={type:'student-supabase',id:st.id};
+        saveAuth({type:'student-supabase',id:st.id,email:st.email,name:st.name,grade:st.grade,className:st.className});
+        closeModal('loginModal'); showStudent();
+      }catch(e){err.textContent=e.message||'Không đăng nhập được.'}
+      return;
+    }
+    return legacyDoLogin();
+  };
+
+  window.updatePublicAuthUI = function(){
+    const a=readAuth();
+    if(a?.type!=='student-supabase') return legacyUpdatePublicAuthUI();
+    const loginBtn=document.getElementById('loginBtn'),adminBtn=document.getElementById('adminBtn'),mobile=document.getElementById('mobileAuthArea');
+    const st=currentStudent||{id:a.id,name:a.name||a.email||'Học sinh',username:a.email||'',email:a.email||'',className:a.className||'',grade:a.grade||10};
+    if(!loginBtn)return; loginBtn.className='btn account-chip';
+    loginBtn.innerHTML=`<span class="account-chip"><span class="account-avatar">${initials(st.name)}</span><span class="account-text"><span class="account-name">${esc(st.name)}</span><span class="account-sub">${esc(st.className||'Học sinh')}</span></span></span>`;
+    loginBtn.onclick=()=>{currentStudent=st;currentUser={type:'student-supabase',id:st.id};showStudent()};
+    if(adminBtn)adminBtn.classList.remove('hidden');
+    if(mobile)mobile.innerHTML=`<button class="btn btn-light full" onclick="showStudent();document.getElementById('mobileMenu').classList.add('hidden')">${esc(st.name)}</button><button class="btn btn-primary full" onclick="logoutStudent();document.getElementById('mobileMenu').classList.add('hidden')">Thoát</button>`;
+  };
+
+  window.showStudent = function(){
+    if(!currentStudent || currentStudent.authProvider!=='supabase') return legacyShowStudent();
+    document.getElementById('studentApp').style.display='block'; updatePublicAuthUI();
+    const st=currentStudent, grade=st.grade||10, cls=st.className||'Học sinh';
+    studentHeaderInfo.textContent=`${st.name} • ${cls}`;
+    const av=document.getElementById('studentHeaderAvatar'); if(av)av.outerHTML=st.avatar?`<img id="studentHeaderAvatar" src="${escAttr(st.avatar)}" alt="Ảnh học sinh">`:`<div id="studentHeaderAvatar" class="mark" style="width:40px;height:40px">${initials(st.name)}</div>`;
+    studentMain.innerHTML=`<div class="student-card"><div class="student-profile-top">${avatarHTML(st.avatar,st.name,'avatar-large')}<div><div class="kicker">HỒ SƠ HỌC TẬP</div><h2 style="margin:4px 0">Xin chào, ${esc(st.name)}</h2><p class="muted" style="margin:0">Tài khoản: <b>${esc(st.email||st.username)}</b>${st.className?` • Lớp: <b>${esc(st.className)}</b>`:''}</p></div></div><div class="dash-cards"><div class="dash-card"><span>Trợ lý AI</span><b>2</b></div><div class="dash-card"><span>Nguồn luyện</span><b>4</b></div><div class="dash-card"><span>Chống lặp</span><b>✓</b></div><div class="dash-card"><span>Skill Map</span><b id="skillMapState">—</b></div></div><div class="student-settings-actions" style="margin-top:16px"><button class="btn btn-primary" onclick="openAITutor()">✦ Hỏi trợ lý AI</button><button class="btn btn-light" onclick="openAdaptivePractice()">Tạo bài luyện</button><button class="btn btn-light" onclick="openStudentProfile()">Tài khoản</button><button class="btn btn-light" onclick="openStudentChangePassword()">Đổi mật khẩu</button></div><div class="adaptive-box" style="margin-top:18px"><h4>✦ Luyện tập theo điểm yếu</h4><div class="muted" style="font-size:12px">Nguồn: Ngân hàng của thầy • ChatGPT • Gemini • Tự động. Lịch sử câu đã làm được dùng chung để chống lặp.</div><div class="weak-list" id="studentWeakList"><span class="weak-tag">Đang đọc Skill Map...</span></div><button class="mini primary" onclick="openAdaptivePractice()">Chọn nguồn và bắt đầu luyện</button></div><div class="student-learning-list"><div class="student-learning-item"><div><b>Chương trình Vật lí ${grade}</b><small>Kiến thức • Luyện tập • Kiểm tra • AI luyện thêm • Video/Mô phỏng • PDF.</small></div><div class="student-learning-actions"><button class="mini primary" onclick="document.getElementById('studentApp').style.display='none';goCurriculum(${grade})">Mở chương trình</button></div></div></div></div>`;
+    loadStudentSkillPreview().then(()=>{const e=document.getElementById('skillMapState');if(e)e.textContent='✓'}).catch(()=>{});
+  };
+
+  window.logoutStudent = async function(){
+    if(currentStudent?.authProvider==='supabase' || readAuth()?.type==='student-supabase') await signOutLive(); else return legacyLogoutStudent();
+    document.getElementById('studentApp').style.display='none'; currentStudent=null; currentUser=null; saveAuth(null); toast('Đã đăng xuất học sinh.');
+  };
+
+  window.openStudentProfile = function(){
+    if(currentStudent?.authProvider!=='supabase') return legacyOpenStudentProfile();
+    const st=currentStudent; genericCard.innerHTML=`<div class="modal-head"><div><h3>Tài khoản học sinh</h3><div class="muted" style="font-size:12px">Tài khoản xác thực bởi Supabase.</div></div><button class="xbtn" onclick="closeModal('genericModal')">×</button></div><div class="student-profile-top">${avatarHTML(st.avatar,st.name,'avatar-large')}<div><b>${esc(st.name)}</b><div class="muted">${esc(st.email)}</div>${st.className?`<div class="muted">Lớp: ${esc(st.className)}</div>`:''}</div></div><div class="notice info" style="margin-top:14px">Thông tin học tập, lịch sử câu hỏi và Skill Map được lưu theo UID Supabase của tài khoản này.</div>`; genericModal.classList.add('open');
+  };
+
+  window.submitPasswordChange = async function(){
+    if(currentStudent?.authProvider!=='supabase') return legacySubmitPasswordChange();
+    const oldp=oldPass.value,newp=newPass.value,newp2=newPass2.value,err=changePassError;err.textContent='';
+    if(!passwordOK(newp)){err.textContent='Mật khẩu phải dài 6–12 ký tự và có ít nhất 1 chữ, 1 số.';return} if(newp!==newp2){err.textContent='Hai lần nhập mật khẩu mới không khớp.';return}
+    try{
+      await authPassword(currentStudent.email,oldp); const s=await activeSession();
+      const r=await fetch(base()+'/auth/v1/user',{method:'PUT',headers:apiHeaders(s.access_token),body:JSON.stringify({password:newp})}); const d=await r.json().catch(()=>({})); if(!r.ok)throw new Error(d.msg||d.message||'Không đổi được mật khẩu.');
+      closeModal('changePassModal'); toast('Đổi mật khẩu thành công.');
+    }catch(e){err.textContent=e.message||'Mật khẩu hiện tại không đúng.'}
+  };
+
+  // Giao diện đăng nhập: ưu tiên email Supabase khi LMS đã cấu hình.
+  const userLabel=document.querySelector('#loginModal .field label'); const userInput=document.getElementById('loginUser');
+  if(liveConfigured() && userLabel && userInput){userLabel.textContent='Email / tài khoản';userInput.placeholder='Ví dụ: test@vatlythpt.com';}
+  const demo=document.getElementById('studentDemo'); if(liveConfigured()&&demo)demo.innerHTML='<b>Học sinh:</b> đăng nhập bằng email + mật khẩu đã tạo trong Supabase Authentication. Tài khoản demo cục bộ vẫn dùng được nếu nhập tên tài khoản không có @.';
+
+  // Khôi phục phiên Supabase khi mở lại trang.
+  (async()=>{
+    if(!liveConfigured())return; const a=readAuth(); if(a?.type!=='student-supabase')return;
+    const s=await activeSession(); if(!s?.user){saveAuth(null);return}
+    currentStudent=studentFromUser(s.user); currentUser={type:'student-supabase',id:currentStudent.id}; updatePublicAuthUI();
+  })();
+})();
 </script>
 </body></html>
