@@ -1,0 +1,855 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "vl10-c1-b1",
+      "grade": 10,
+      "chapter": 1,
+      "lesson": 1,
+      "chapterTitle": "MỞ ĐẦU",
+      "title": "Bài 1. Làm quen với Vật lí",
+      "shortTitle": "Làm quen với Vật lí",
+      "basePath": "/vat-ly-10/chuong-1/bai-1-lam-quen-voi-vat-li/"
+    },
+    {
+      "id": "vl10-c1-b2",
+      "grade": 10,
+      "chapter": 1,
+      "lesson": 2,
+      "chapterTitle": "MỞ ĐẦU",
+      "title": "Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí",
+      "shortTitle": "Các quy tắc an toàn trong phòng thực hành Vật lí",
+      "basePath": "/vat-ly-10/chuong-1/bai-2-cac-quy-tac-an-toan-trong-phong-thuc-hanh-vat-li/"
+    },
+    {
+      "id": "vl10-c1-b3",
+      "grade": 10,
+      "chapter": 1,
+      "lesson": 3,
+      "chapterTitle": "MỞ ĐẦU",
+      "title": "Bài 3. Thực hành: Tính sai số trong phép đo. Ghi kết quả đo",
+      "shortTitle": "Thực hành: Tính sai số trong phép đo. Ghi kết quả đo",
+      "basePath": "/vat-ly-10/chuong-1/bai-3-thuc-hanh-tinh-sai-so-trong-phep-do-ghi-ket-qua-do/"
+    },
+    {
+      "id": "vl10-c2-b4",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 4,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+      "shortTitle": "Độ dịch chuyển và quãng đường đi được",
+      "basePath": "/vat-ly-10/chuong-2/bai-4-do-dich-chuyen-va-quang-duong-di-duoc/"
+    },
+    {
+      "id": "vl10-c2-b5",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 5,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 5. Tốc độ và vận tốc",
+      "shortTitle": "Tốc độ và vận tốc",
+      "basePath": "/vat-ly-10/chuong-2/bai-5-toc-do-va-van-toc/"
+    },
+    {
+      "id": "vl10-c2-b6",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 6,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+      "shortTitle": "Thực hành: Đo tốc độ của vật chuyển động",
+      "basePath": "/vat-ly-10/chuong-2/bai-6-thuc-hanh-do-toc-do-cua-vat-chuyen-dong/"
+    },
+    {
+      "id": "vl10-c2-b7",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 7,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 7. Đồ thị độ dịch chuyển – thời gian",
+      "shortTitle": "Đồ thị độ dịch chuyển – thời gian",
+      "basePath": "/vat-ly-10/chuong-2/bai-7-do-thi-do-dich-chuyen-thoi-gian/"
+    },
+    {
+      "id": "vl10-c2-b8",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 8,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 8. Chuyển động biến đổi. Gia tốc",
+      "shortTitle": "Chuyển động biến đổi. Gia tốc",
+      "basePath": "/vat-ly-10/chuong-2/bai-8-chuyen-dong-bien-doi-gia-toc/"
+    },
+    {
+      "id": "vl10-c2-b9",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 9,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 9. Chuyển động thẳng biến đổi đều",
+      "shortTitle": "Chuyển động thẳng biến đổi đều",
+      "basePath": "/vat-ly-10/chuong-2/bai-9-chuyen-dong-thang-bien-doi-deu/"
+    },
+    {
+      "id": "vl10-c2-b10",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 10,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 10. Sự rơi tự do",
+      "shortTitle": "Sự rơi tự do",
+      "basePath": "/vat-ly-10/chuong-2/bai-10-su-roi-tu-do/"
+    },
+    {
+      "id": "vl10-c2-b11",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 11,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+      "shortTitle": "Thực hành: Đo gia tốc rơi tự do",
+      "basePath": "/vat-ly-10/chuong-2/bai-11-thuc-hanh-do-gia-toc-roi-tu-do/"
+    },
+    {
+      "id": "vl10-c2-b12",
+      "grade": 10,
+      "chapter": 2,
+      "lesson": 12,
+      "chapterTitle": "ĐỘNG HỌC",
+      "title": "Bài 12. Chuyển động ném",
+      "shortTitle": "Chuyển động ném",
+      "basePath": "/vat-ly-10/chuong-2/bai-12-chuyen-dong-nem/"
+    },
+    {
+      "id": "vl10-c3-b13",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 13,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+      "shortTitle": "Tổng hợp và phân tích lực. Cân bằng lực",
+      "basePath": "/vat-ly-10/chuong-3/bai-13-tong-hop-va-phan-tich-luc-can-bang-luc/"
+    },
+    {
+      "id": "vl10-c3-b14",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 14,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 14. Định luật 1 Newton",
+      "shortTitle": "Định luật 1 Newton",
+      "basePath": "/vat-ly-10/chuong-3/bai-14-dinh-luat-1-newton/"
+    },
+    {
+      "id": "vl10-c3-b15",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 15,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 15. Định luật 2 Newton",
+      "shortTitle": "Định luật 2 Newton",
+      "basePath": "/vat-ly-10/chuong-3/bai-15-dinh-luat-2-newton/"
+    },
+    {
+      "id": "vl10-c3-b16",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 16,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 16. Định luật 3 Newton",
+      "shortTitle": "Định luật 3 Newton",
+      "basePath": "/vat-ly-10/chuong-3/bai-16-dinh-luat-3-newton/"
+    },
+    {
+      "id": "vl10-c3-b17",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 17,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 17. Trọng lực và lực căng",
+      "shortTitle": "Trọng lực và lực căng",
+      "basePath": "/vat-ly-10/chuong-3/bai-17-trong-luc-va-luc-cang/"
+    },
+    {
+      "id": "vl10-c3-b18",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 18,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 18. Lực ma sát",
+      "shortTitle": "Lực ma sát",
+      "basePath": "/vat-ly-10/chuong-3/bai-18-luc-ma-sat/"
+    },
+    {
+      "id": "vl10-c3-b19",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 19,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 19. Lực cản và lực nâng",
+      "shortTitle": "Lực cản và lực nâng",
+      "basePath": "/vat-ly-10/chuong-3/bai-19-luc-can-va-luc-nang/"
+    },
+    {
+      "id": "vl10-c3-b20",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 20,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+      "shortTitle": "Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+      "basePath": "/vat-ly-10/chuong-3/bai-20-mot-so-vi-du-ve-cach-giai-cac-bai-toan-thuoc-phan-dong-luc-hoc/"
+    },
+    {
+      "id": "vl10-c3-b21",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 21,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 21. Moment lực. Cân bằng của vật rắn",
+      "shortTitle": "Moment lực. Cân bằng của vật rắn",
+      "basePath": "/vat-ly-10/chuong-3/bai-21-moment-luc-can-bang-cua-vat-ran/"
+    },
+    {
+      "id": "vl10-c3-b22",
+      "grade": 10,
+      "chapter": 3,
+      "lesson": 22,
+      "chapterTitle": "ĐỘNG LỰC HỌC",
+      "title": "Bài 22. Thực hành: Tổng hợp lực",
+      "shortTitle": "Thực hành: Tổng hợp lực",
+      "basePath": "/vat-ly-10/chuong-3/bai-22-thuc-hanh-tong-hop-luc/"
+    },
+    {
+      "id": "vl10-c4-b23",
+      "grade": 10,
+      "chapter": 4,
+      "lesson": 23,
+      "chapterTitle": "NĂNG LƯỢNG, CÔNG, CÔNG SUẤT",
+      "title": "Bài 23. Năng lượng. Công cơ học",
+      "shortTitle": "Năng lượng. Công cơ học",
+      "basePath": "/vat-ly-10/chuong-4/bai-23-nang-luong-cong-co-hoc/"
+    },
+    {
+      "id": "vl10-c4-b24",
+      "grade": 10,
+      "chapter": 4,
+      "lesson": 24,
+      "chapterTitle": "NĂNG LƯỢNG, CÔNG, CÔNG SUẤT",
+      "title": "Bài 24. Công suất",
+      "shortTitle": "Công suất",
+      "basePath": "/vat-ly-10/chuong-4/bai-24-cong-suat/"
+    },
+    {
+      "id": "vl10-c4-b25",
+      "grade": 10,
+      "chapter": 4,
+      "lesson": 25,
+      "chapterTitle": "NĂNG LƯỢNG, CÔNG, CÔNG SUẤT",
+      "title": "Bài 25. Động năng, thế năng",
+      "shortTitle": "Động năng, thế năng",
+      "basePath": "/vat-ly-10/chuong-4/bai-25-dong-nang-the-nang/"
+    },
+    {
+      "id": "vl10-c4-b26",
+      "grade": 10,
+      "chapter": 4,
+      "lesson": 26,
+      "chapterTitle": "NĂNG LƯỢNG, CÔNG, CÔNG SUẤT",
+      "title": "Bài 26. Cơ năng và định luật bảo toàn cơ năng",
+      "shortTitle": "Cơ năng và định luật bảo toàn cơ năng",
+      "basePath": "/vat-ly-10/chuong-4/bai-26-co-nang-va-dinh-luat-bao-toan-co-nang/"
+    },
+    {
+      "id": "vl10-c4-b27",
+      "grade": 10,
+      "chapter": 4,
+      "lesson": 27,
+      "chapterTitle": "NĂNG LƯỢNG, CÔNG, CÔNG SUẤT",
+      "title": "Bài 27. Hiệu suất",
+      "shortTitle": "Hiệu suất",
+      "basePath": "/vat-ly-10/chuong-4/bai-27-hieu-suat/"
+    },
+    {
+      "id": "vl10-c5-b28",
+      "grade": 10,
+      "chapter": 5,
+      "lesson": 28,
+      "chapterTitle": "ĐỘNG LƯỢNG",
+      "title": "Bài 28. Động lượng",
+      "shortTitle": "Động lượng",
+      "basePath": "/vat-ly-10/chuong-5/bai-28-dong-luong/"
+    },
+    {
+      "id": "vl10-c5-b29",
+      "grade": 10,
+      "chapter": 5,
+      "lesson": 29,
+      "chapterTitle": "ĐỘNG LƯỢNG",
+      "title": "Bài 29. Định luật bảo toàn động lượng",
+      "shortTitle": "Định luật bảo toàn động lượng",
+      "basePath": "/vat-ly-10/chuong-5/bai-29-dinh-luat-bao-toan-dong-luong/"
+    },
+    {
+      "id": "vl10-c5-b30",
+      "grade": 10,
+      "chapter": 5,
+      "lesson": 30,
+      "chapterTitle": "ĐỘNG LƯỢNG",
+      "title": "Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm",
+      "shortTitle": "Thực hành: Xác định động lượng của vật trước và sau va chạm",
+      "basePath": "/vat-ly-10/chuong-5/bai-30-thuc-hanh-xac-dinh-dong-luong-cua-vat-truoc-va-sau-va-cham/"
+    },
+    {
+      "id": "vl10-c6-b31",
+      "grade": 10,
+      "chapter": 6,
+      "lesson": 31,
+      "chapterTitle": "CHUYỂN ĐỘNG TRÒN",
+      "title": "Bài 31. Động học của chuyển động tròn đều",
+      "shortTitle": "Động học của chuyển động tròn đều",
+      "basePath": "/vat-ly-10/chuong-6/bai-31-dong-hoc-cua-chuyen-dong-tron-deu/"
+    },
+    {
+      "id": "vl10-c6-b32",
+      "grade": 10,
+      "chapter": 6,
+      "lesson": 32,
+      "chapterTitle": "CHUYỂN ĐỘNG TRÒN",
+      "title": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
+      "shortTitle": "Lực hướng tâm và gia tốc hướng tâm",
+      "basePath": "/vat-ly-10/chuong-6/bai-32-luc-huong-tam-va-gia-toc-huong-tam/"
+    },
+    {
+      "id": "vl10-c7-b33",
+      "grade": 10,
+      "chapter": 7,
+      "lesson": 33,
+      "chapterTitle": "BIẾN DẠNG CỦA VẬT RẮN. ÁP SUẤT CHẤT LỎNG",
+      "title": "Bài 33. Biến dạng của vật rắn",
+      "shortTitle": "Biến dạng của vật rắn",
+      "basePath": "/vat-ly-10/chuong-7/bai-33-bien-dang-cua-vat-ran/"
+    },
+    {
+      "id": "vl10-c7-b34",
+      "grade": 10,
+      "chapter": 7,
+      "lesson": 34,
+      "chapterTitle": "BIẾN DẠNG CỦA VẬT RẮN. ÁP SUẤT CHẤT LỎNG",
+      "title": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+      "shortTitle": "Khối lượng riêng. Áp suất chất lỏng",
+      "basePath": "/vat-ly-10/chuong-7/bai-34-khoi-luong-rieng-ap-suat-chat-long/"
+    },
+    {
+      "id": "vl11-c1-b1",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 1,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 1. Dao động điều hòa",
+      "shortTitle": "Dao động điều hòa",
+      "basePath": "/vat-ly-11/chuong-1/bai-1-dao-dong-dieu-hoa/"
+    },
+    {
+      "id": "vl11-c1-b2",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 2,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 2. Mô tả dao động điều hòa",
+      "shortTitle": "Mô tả dao động điều hòa",
+      "basePath": "/vat-ly-11/chuong-1/bai-2-mo-ta-dao-dong-dieu-hoa/"
+    },
+    {
+      "id": "vl11-c1-b3",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 3,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 3. Vận tốc, gia tốc trong dao động điều hòa",
+      "shortTitle": "Vận tốc, gia tốc trong dao động điều hòa",
+      "basePath": "/vat-ly-11/chuong-1/bai-3-van-toc-gia-toc-trong-dao-dong-dieu-hoa/"
+    },
+    {
+      "id": "vl11-c1-b4",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 4,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 4. Bài tập về dao động điều hòa",
+      "shortTitle": "Bài tập về dao động điều hòa",
+      "basePath": "/vat-ly-11/chuong-1/bai-4-bai-tap-ve-dao-dong-dieu-hoa/"
+    },
+    {
+      "id": "vl11-c1-b5",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 5,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 5. Động năng. Thế năng. Sự chuyển hóa năng lượng trong dao động điều hòa",
+      "shortTitle": "Động năng. Thế năng. Sự chuyển hóa năng lượng trong dao động điều hòa",
+      "basePath": "/vat-ly-11/chuong-1/bai-5-dong-nang-the-nang-su-chuyen-hoa-nang-luong-trong-dao-dong-dieu-hoa/"
+    },
+    {
+      "id": "vl11-c1-b6",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 6,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+      "shortTitle": "Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+      "basePath": "/vat-ly-11/chuong-1/bai-6-dao-dong-tat-dan-dao-dong-cuong-buc-hien-tuong-cong-huong/"
+    },
+    {
+      "id": "vl11-c1-b7",
+      "grade": 11,
+      "chapter": 1,
+      "lesson": 7,
+      "chapterTitle": "DAO ĐỘNG",
+      "title": "Bài 7. Bài tập về sự chuyển hóa năng lượng trong dao động điều hòa",
+      "shortTitle": "Bài tập về sự chuyển hóa năng lượng trong dao động điều hòa",
+      "basePath": "/vat-ly-11/chuong-1/bai-7-bai-tap-ve-su-chuyen-hoa-nang-luong-trong-dao-dong-dieu-hoa/"
+    },
+    {
+      "id": "vl11-c2-b8",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 8,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 8. Mô tả sóng",
+      "shortTitle": "Mô tả sóng",
+      "basePath": "/vat-ly-11/chuong-2/bai-8-mo-ta-song/"
+    },
+    {
+      "id": "vl11-c2-b9",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 9,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 9. Sóng ngang. Sóng dọc. Sự truyền năng lượng của sóng cơ",
+      "shortTitle": "Sóng ngang. Sóng dọc. Sự truyền năng lượng của sóng cơ",
+      "basePath": "/vat-ly-11/chuong-2/bai-9-song-ngang-song-doc-su-truyen-nang-luong-cua-song-co/"
+    },
+    {
+      "id": "vl11-c2-b10",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 10,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 10. Thực hành: Đo tần số của sóng âm",
+      "shortTitle": "Thực hành: Đo tần số của sóng âm",
+      "basePath": "/vat-ly-11/chuong-2/bai-10-thuc-hanh-do-tan-so-cua-song-am/"
+    },
+    {
+      "id": "vl11-c2-b11",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 11,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 11. Sóng điện từ",
+      "shortTitle": "Sóng điện từ",
+      "basePath": "/vat-ly-11/chuong-2/bai-11-song-dien-tu/"
+    },
+    {
+      "id": "vl11-c2-b12",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 12,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 12. Giao thoa sóng",
+      "shortTitle": "Giao thoa sóng",
+      "basePath": "/vat-ly-11/chuong-2/bai-12-giao-thoa-song/"
+    },
+    {
+      "id": "vl11-c2-b13",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 13,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 13. Sóng dừng",
+      "shortTitle": "Sóng dừng",
+      "basePath": "/vat-ly-11/chuong-2/bai-13-song-dung/"
+    },
+    {
+      "id": "vl11-c2-b14",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 14,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 14. Bài tập về sóng",
+      "shortTitle": "Bài tập về sóng",
+      "basePath": "/vat-ly-11/chuong-2/bai-14-bai-tap-ve-song/"
+    },
+    {
+      "id": "vl11-c2-b15",
+      "grade": 11,
+      "chapter": 2,
+      "lesson": 15,
+      "chapterTitle": "SÓNG",
+      "title": "Bài 15. Thực hành: Đo tốc độ truyền âm",
+      "shortTitle": "Thực hành: Đo tốc độ truyền âm",
+      "basePath": "/vat-ly-11/chuong-2/bai-15-thuc-hanh-do-toc-do-truyen-am/"
+    },
+    {
+      "id": "vl11-c3-b16",
+      "grade": 11,
+      "chapter": 3,
+      "lesson": 16,
+      "chapterTitle": "ĐIỆN TRƯỜNG",
+      "title": "Bài 16. Lực tương tác giữa hai điện tích",
+      "shortTitle": "Lực tương tác giữa hai điện tích",
+      "basePath": "/vat-ly-11/chuong-3/bai-16-luc-tuong-tac-giua-hai-dien-tich/"
+    },
+    {
+      "id": "vl11-c3-b17",
+      "grade": 11,
+      "chapter": 3,
+      "lesson": 17,
+      "chapterTitle": "ĐIỆN TRƯỜNG",
+      "title": "Bài 17. Khái niệm điện trường",
+      "shortTitle": "Khái niệm điện trường",
+      "basePath": "/vat-ly-11/chuong-3/bai-17-khai-niem-dien-truong/"
+    },
+    {
+      "id": "vl11-c3-b18",
+      "grade": 11,
+      "chapter": 3,
+      "lesson": 18,
+      "chapterTitle": "ĐIỆN TRƯỜNG",
+      "title": "Bài 18. Điện trường đều",
+      "shortTitle": "Điện trường đều",
+      "basePath": "/vat-ly-11/chuong-3/bai-18-dien-truong-deu/"
+    },
+    {
+      "id": "vl11-c3-b19",
+      "grade": 11,
+      "chapter": 3,
+      "lesson": 19,
+      "chapterTitle": "ĐIỆN TRƯỜNG",
+      "title": "Bài 19. Thế năng điện",
+      "shortTitle": "Thế năng điện",
+      "basePath": "/vat-ly-11/chuong-3/bai-19-the-nang-dien/"
+    },
+    {
+      "id": "vl11-c3-b20",
+      "grade": 11,
+      "chapter": 3,
+      "lesson": 20,
+      "chapterTitle": "ĐIỆN TRƯỜNG",
+      "title": "Bài 20. Điện thế",
+      "shortTitle": "Điện thế",
+      "basePath": "/vat-ly-11/chuong-3/bai-20-dien-the/"
+    },
+    {
+      "id": "vl11-c3-b21",
+      "grade": 11,
+      "chapter": 3,
+      "lesson": 21,
+      "chapterTitle": "ĐIỆN TRƯỜNG",
+      "title": "Bài 21. Tụ điện",
+      "shortTitle": "Tụ điện",
+      "basePath": "/vat-ly-11/chuong-3/bai-21-tu-dien/"
+    },
+    {
+      "id": "vl11-c4-b22",
+      "grade": 11,
+      "chapter": 4,
+      "lesson": 22,
+      "chapterTitle": "DÒNG ĐIỆN. MẠCH ĐIỆN",
+      "title": "Bài 22. Cường độ dòng điện",
+      "shortTitle": "Cường độ dòng điện",
+      "basePath": "/vat-ly-11/chuong-4/bai-22-cuong-do-dong-dien/"
+    },
+    {
+      "id": "vl11-c4-b23",
+      "grade": 11,
+      "chapter": 4,
+      "lesson": 23,
+      "chapterTitle": "DÒNG ĐIỆN. MẠCH ĐIỆN",
+      "title": "Bài 23. Điện trở. Định luật Ohm",
+      "shortTitle": "Điện trở. Định luật Ohm",
+      "basePath": "/vat-ly-11/chuong-4/bai-23-dien-tro-dinh-luat-ohm/"
+    },
+    {
+      "id": "vl11-c4-b24",
+      "grade": 11,
+      "chapter": 4,
+      "lesson": 24,
+      "chapterTitle": "DÒNG ĐIỆN. MẠCH ĐIỆN",
+      "title": "Bài 24. Nguồn điện",
+      "shortTitle": "Nguồn điện",
+      "basePath": "/vat-ly-11/chuong-4/bai-24-nguon-dien/"
+    },
+    {
+      "id": "vl11-c4-b25",
+      "grade": 11,
+      "chapter": 4,
+      "lesson": 25,
+      "chapterTitle": "DÒNG ĐIỆN. MẠCH ĐIỆN",
+      "title": "Bài 25. Năng lượng và công suất điện",
+      "shortTitle": "Năng lượng và công suất điện",
+      "basePath": "/vat-ly-11/chuong-4/bai-25-nang-luong-va-cong-suat-dien/"
+    },
+    {
+      "id": "vl11-c4-b26",
+      "grade": 11,
+      "chapter": 4,
+      "lesson": 26,
+      "chapterTitle": "DÒNG ĐIỆN. MẠCH ĐIỆN",
+      "title": "Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hóa",
+      "shortTitle": "Thực hành: Đo suất điện động và điện trở trong của pin điện hóa",
+      "basePath": "/vat-ly-11/chuong-4/bai-26-thuc-hanh-do-suat-dien-dong-va-dien-tro-trong-cua-pin-dien-hoa/"
+    },
+    {
+      "id": "vl12-c1-b1",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 1,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 1. Cấu trúc của chất. Sự chuyển thể",
+      "shortTitle": "Cấu trúc của chất. Sự chuyển thể",
+      "basePath": "/vat-ly-12/chuong-1/bai-1-cau-truc-cua-chat-su-chuyen-the/"
+    },
+    {
+      "id": "vl12-c1-b2",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 2,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 2. Nội năng. Định luật I của nhiệt động lực học",
+      "shortTitle": "Nội năng. Định luật I của nhiệt động lực học",
+      "basePath": "/vat-ly-12/chuong-1/bai-2-noi-nang-dinh-luat-i-cua-nhiet-dong-luc-hoc/"
+    },
+    {
+      "id": "vl12-c1-b3",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 3,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 3. Nhiệt độ. Thang nhiệt độ – nhiệt kế",
+      "shortTitle": "Nhiệt độ. Thang nhiệt độ – nhiệt kế",
+      "basePath": "/vat-ly-12/chuong-1/bai-3-nhiet-do-thang-nhiet-do-nhiet-ke/"
+    },
+    {
+      "id": "vl12-c1-b4",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 4,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 4. Nhiệt dung riêng",
+      "shortTitle": "Nhiệt dung riêng",
+      "basePath": "/vat-ly-12/chuong-1/bai-4-nhiet-dung-rieng/"
+    },
+    {
+      "id": "vl12-c1-b5",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 5,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 5. Nhiệt nóng chảy riêng",
+      "shortTitle": "Nhiệt nóng chảy riêng",
+      "basePath": "/vat-ly-12/chuong-1/bai-5-nhiet-nong-chay-rieng/"
+    },
+    {
+      "id": "vl12-c1-b6",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 6,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 6. Nhiệt hóa hơi riêng",
+      "shortTitle": "Nhiệt hóa hơi riêng",
+      "basePath": "/vat-ly-12/chuong-1/bai-6-nhiet-hoa-hoi-rieng/"
+    },
+    {
+      "id": "vl12-c1-b7",
+      "grade": 12,
+      "chapter": 1,
+      "lesson": 7,
+      "chapterTitle": "VẬT LÍ NHIỆT",
+      "title": "Bài 7. Bài tập về vật lí nhiệt",
+      "shortTitle": "Bài tập về vật lí nhiệt",
+      "basePath": "/vat-ly-12/chuong-1/bai-7-bai-tap-ve-vat-li-nhiet/"
+    },
+    {
+      "id": "vl12-c2-b8",
+      "grade": 12,
+      "chapter": 2,
+      "lesson": 8,
+      "chapterTitle": "KHÍ LÍ TƯỞNG",
+      "title": "Bài 8. Mô hình động học phân tử chất khí",
+      "shortTitle": "Mô hình động học phân tử chất khí",
+      "basePath": "/vat-ly-12/chuong-2/bai-8-mo-hinh-dong-hoc-phan-tu-chat-khi/"
+    },
+    {
+      "id": "vl12-c2-b9",
+      "grade": 12,
+      "chapter": 2,
+      "lesson": 9,
+      "chapterTitle": "KHÍ LÍ TƯỞNG",
+      "title": "Bài 9. Định luật Boyle",
+      "shortTitle": "Định luật Boyle",
+      "basePath": "/vat-ly-12/chuong-2/bai-9-dinh-luat-boyle/"
+    },
+    {
+      "id": "vl12-c2-b10",
+      "grade": 12,
+      "chapter": 2,
+      "lesson": 10,
+      "chapterTitle": "KHÍ LÍ TƯỞNG",
+      "title": "Bài 10. Định luật Charles",
+      "shortTitle": "Định luật Charles",
+      "basePath": "/vat-ly-12/chuong-2/bai-10-dinh-luat-charles/"
+    },
+    {
+      "id": "vl12-c2-b11",
+      "grade": 12,
+      "chapter": 2,
+      "lesson": 11,
+      "chapterTitle": "KHÍ LÍ TƯỞNG",
+      "title": "Bài 11. Phương trình trạng thái của khí lí tưởng",
+      "shortTitle": "Phương trình trạng thái của khí lí tưởng",
+      "basePath": "/vat-ly-12/chuong-2/bai-11-phuong-trinh-trang-thai-cua-khi-li-tuong/"
+    },
+    {
+      "id": "vl12-c2-b12",
+      "grade": 12,
+      "chapter": 2,
+      "lesson": 12,
+      "chapterTitle": "KHÍ LÍ TƯỞNG",
+      "title": "Bài 12. Áp suất khí theo mô hình động học phân tử. Quan hệ giữa động năng phân tử và nhiệt độ",
+      "shortTitle": "Áp suất khí theo mô hình động học phân tử. Quan hệ giữa động năng phân tử và nhiệt độ",
+      "basePath": "/vat-ly-12/chuong-2/bai-12-ap-suat-khi-theo-mo-hinh-dong-hoc-phan-tu-quan-he-giua-dong-nang-phan-tu-va-nhiet-do/"
+    },
+    {
+      "id": "vl12-c2-b13",
+      "grade": 12,
+      "chapter": 2,
+      "lesson": 13,
+      "chapterTitle": "KHÍ LÍ TƯỞNG",
+      "title": "Bài 13. Bài tập về khí lí tưởng",
+      "shortTitle": "Bài tập về khí lí tưởng",
+      "basePath": "/vat-ly-12/chuong-2/bai-13-bai-tap-ve-khi-li-tuong/"
+    },
+    {
+      "id": "vl12-c3-b14",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 14,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 14. Từ trường",
+      "shortTitle": "Từ trường",
+      "basePath": "/vat-ly-12/chuong-3/bai-14-tu-truong/"
+    },
+    {
+      "id": "vl12-c3-b15",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 15,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 15. Lực từ tác dụng lên dây dẫn mang dòng điện. Cảm ứng từ",
+      "shortTitle": "Lực từ tác dụng lên dây dẫn mang dòng điện. Cảm ứng từ",
+      "basePath": "/vat-ly-12/chuong-3/bai-15-luc-tu-tac-dung-len-day-dan-mang-dong-dien-cam-ung-tu/"
+    },
+    {
+      "id": "vl12-c3-b16",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 16,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 16. Từ thông. Hiện tượng cảm ứng điện từ",
+      "shortTitle": "Từ thông. Hiện tượng cảm ứng điện từ",
+      "basePath": "/vat-ly-12/chuong-3/bai-16-tu-thong-hien-tuong-cam-ung-dien-tu/"
+    },
+    {
+      "id": "vl12-c3-b17",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 17,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 17. Máy phát điện xoay chiều",
+      "shortTitle": "Máy phát điện xoay chiều",
+      "basePath": "/vat-ly-12/chuong-3/bai-17-may-phat-dien-xoay-chieu/"
+    },
+    {
+      "id": "vl12-c3-b18",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 18,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 18. Ứng dụng hiện tượng cảm ứng điện từ",
+      "shortTitle": "Ứng dụng hiện tượng cảm ứng điện từ",
+      "basePath": "/vat-ly-12/chuong-3/bai-18-ung-dung-hien-tuong-cam-ung-dien-tu/"
+    },
+    {
+      "id": "vl12-c3-b19",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 19,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 19. Điện từ trường. Mô hình sóng điện từ",
+      "shortTitle": "Điện từ trường. Mô hình sóng điện từ",
+      "basePath": "/vat-ly-12/chuong-3/bai-19-dien-tu-truong-mo-hinh-song-dien-tu/"
+    },
+    {
+      "id": "vl12-c3-b20",
+      "grade": 12,
+      "chapter": 3,
+      "lesson": 20,
+      "chapterTitle": "TỪ TRƯỜNG",
+      "title": "Bài 20. Bài tập về từ trường",
+      "shortTitle": "Bài tập về từ trường",
+      "basePath": "/vat-ly-12/chuong-3/bai-20-bai-tap-ve-tu-truong/"
+    },
+    {
+      "id": "vl12-c4-b21",
+      "grade": 12,
+      "chapter": 4,
+      "lesson": 21,
+      "chapterTitle": "VẬT LÍ HẠT NHÂN",
+      "title": "Bài 21. Cấu trúc hạt nhân",
+      "shortTitle": "Cấu trúc hạt nhân",
+      "basePath": "/vat-ly-12/chuong-4/bai-21-cau-truc-hat-nhan/"
+    },
+    {
+      "id": "vl12-c4-b22",
+      "grade": 12,
+      "chapter": 4,
+      "lesson": 22,
+      "chapterTitle": "VẬT LÍ HẠT NHÂN",
+      "title": "Bài 22. Phản ứng hạt nhân và năng lượng liên kết",
+      "shortTitle": "Phản ứng hạt nhân và năng lượng liên kết",
+      "basePath": "/vat-ly-12/chuong-4/bai-22-phan-ung-hat-nhan-va-nang-luong-lien-ket/"
+    },
+    {
+      "id": "vl12-c4-b23",
+      "grade": 12,
+      "chapter": 4,
+      "lesson": 23,
+      "chapterTitle": "VẬT LÍ HẠT NHÂN",
+      "title": "Bài 23. Hiện tượng phóng xạ",
+      "shortTitle": "Hiện tượng phóng xạ",
+      "basePath": "/vat-ly-12/chuong-4/bai-23-hien-tuong-phong-xa/"
+    },
+    {
+      "id": "vl12-c4-b24",
+      "grade": 12,
+      "chapter": 4,
+      "lesson": 24,
+      "chapterTitle": "VẬT LÍ HẠT NHÂN",
+      "title": "Bài 24. Công nghiệp hạt nhân",
+      "shortTitle": "Công nghiệp hạt nhân",
+      "basePath": "/vat-ly-12/chuong-4/bai-24-cong-nghiep-hat-nhan/"
+    },
+    {
+      "id": "vl12-c4-b25",
+      "grade": 12,
+      "chapter": 4,
+      "lesson": 25,
+      "chapterTitle": "VẬT LÍ HẠT NHÂN",
+      "title": "Bài 25. Bài tập về vật lí hạt nhân",
+      "shortTitle": "Bài tập về vật lí hạt nhân",
+      "basePath": "/vat-ly-12/chuong-4/bai-25-bai-tap-ve-vat-li-hat-nhan/"
+    }
+  ]
+}
