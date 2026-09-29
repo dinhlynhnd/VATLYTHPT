@@ -2,13 +2,14 @@
 // Chỉ được đặt Supabase URL + PUBLISHABLE KEY ở đây.
 // TUYỆT ĐỐI KHÔNG đặt sb_secret_..., OPENAI_API_KEY hay GEMINI_API_KEY.
 window.VATLYTHPT_CONFIG = {
-  version: '5.1.0',
+  version: '5.3.0',
   supabaseUrl: 'https://mtzueerddrwtvkbehrpn.supabase.co',
   supabasePublishableKey: 'PASTE_SUPABASE_PUBLISHABLE_KEY_HERE',
   functions: {
     generatePractice: 'generate-practice',
     aiTutor: 'ai-tutor',
-    studentSkillSummary: 'student-skill-summary'
+    studentSkillSummary: 'student-skill-summary',
+    lectureAdmin: 'lecture-admin'
   },
   defaults: {
     practiceSource: 'auto',
